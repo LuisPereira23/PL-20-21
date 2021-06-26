@@ -1,0 +1,115 @@
+digraph {
+	"J.J. Almeida" [label="J.J. Almeida"]
+	"Pedro Henriques" [label="Pedro Henriques"]
+	"J.J. Almeida" -> "Pedro Henriques"
+	"P.R. Henriques" [label="P.R. Henriques"]
+	"J.J. Almeida" -> "P.R. Henriques"
+	"L.F. Neves" [label="L.F. Neves"]
+	"J.J. Almeida" -> "L.F. Neves"
+	"Luís Costa" [label="Luís Costa"]
+	"J.J. Almeida" -> "Luís Costa"
+	"Ricardo Reis" [label="Ricardo Reis"]
+	"J.J. Almeida" -> "Ricardo Reis"
+	"Xavier Gómez Guinovart" [label="Xavier Gómez Guinovart"]
+	"J.J. Almeida" -> "Xavier Gómez Guinovart"
+	"Belinda Maia" [label="Belinda Maia"]
+	"J.J. Almeida" -> "Belinda Maia"
+	"Alberto M. Simões" [label="Alberto M. Simões"]
+	"J.J. Almeida" -> "Alberto M. Simões"
+	"F.L. Neves" [label="F.L. Neves"]
+	"J.J. Almeida" -> "F.L. Neves"
+	"José Castro" [label="José Castro"]
+	"J.J. Almeida" -> "José Castro"
+	"J.C. Ramalho" [label="J.C. Ramalho"]
+	"J.J. Almeida" -> "J.C. Ramalho"
+	"J. Gustavo Rocha" [label="J. Gustavo Rocha"]
+	"J.J. Almeida" -> "J. Gustavo Rocha"
+	"Rosário Silva" [label="Rosário Silva"]
+	"J.J. Almeida" -> "Rosário Silva"
+	"Sónia Moreira" [label="Sónia Moreira"]
+	"J.J. Almeida" -> "Sónia Moreira"
+	"L.S. Barbosa" [label="L.S. Barbosa"]
+	"J.J. Almeida" -> "L.S. Barbosa"
+	"M.R. Henriques" [label="M.R. Henriques"]
+	"J.J. Almeida" -> "M.R. Henriques"
+	"José Carlos Ramalho" [label="José Carlos Ramalho"]
+	"J.J. Almeida" -> "José Carlos Ramalho"
+	"Rachel Aires" [label="Rachel Aires"]
+	"J.J. Almeida" -> "Rachel Aires"
+	"Jorge Rocha" [label="Jorge Rocha"]
+	"J.J. Almeida" -> "Jorge Rocha"
+	"J.L. Faria" [label="J.L. Faria"]
+	"J.J. Almeida" -> "J.L. Faria"
+	"Alberto Simões" [label="Alberto Simões"]
+	"J.J. Almeida" -> "Alberto Simões"
+	"Ana Pinto" [label="Ana Pinto"]
+	"J.J. Almeida" -> "Ana Pinto"
+	"Ricardo Henriques" [label="Ricardo Henriques"]
+	"J.J. Almeida" -> "Ricardo Henriques"
+	"Elisabete Ranchhod" [label="Elisabete Ranchhod"]
+	"J.J. Almeida" -> "Elisabete Ranchhod"
+	"Ulisses Pinto" [label="Ulisses Pinto"]
+	"J.J. Almeida" -> "Ulisses Pinto"
+	"Cristina Mota" [label="Cristina Mota"]
+	"J.J. Almeida" -> "Cristina Mota"
+	"Bruno Martins" [label="Bruno Martins"]
+	"J.J. Almeida" -> "Bruno Martins"
+	"Diana Santos" [label="Diana Santos"]
+	"J.J. Almeida" -> "Diana Santos"
+	"P. Rangel Henriques" [label="P. Rangel Henriques"]
+	"J.J. Almeida" -> "P. Rangel Henriques"
+	"F. Mário Martins" [label="F. Mário Martins"]
+	"J.J. Almeida" -> "F. Mário Martins"
+	"Paulo Rocha" [label="Paulo Rocha"]
+	"J.J. Almeida" -> "Paulo Rocha"
+	"Débora Oliveira" [label="Débora Oliveira"]
+	"J.J. Almeida" -> "Débora Oliveira"
+	"Jorge Gustavo Rocha" [label="Jorge Gustavo Rocha"]
+	"J.J. Almeida" -> "Jorge Gustavo Rocha"
+	"Luís Cabral" [label="Luís Cabral"]
+	"J.J. Almeida" -> "Luís Cabral"
+	"Pedro Rangel Henriques" [label="Pedro Rangel Henriques"]
+	"J.J. Almeida" -> "Pedro Rangel Henriques"
+	"J. Alves de Castro" [label="J. Alves de Castro"]
+	"J.J. Almeida" -> "J. Alves de Castro"
+	"Paulo Silva" [label="Paulo Silva"]
+	"J.J. Almeida" -> "Paulo Silva"
+	"Tiago Pedroso" [label="Tiago Pedroso"]
+	"J.J. Almeida" -> "Tiago Pedroso"
+	"A. M. Simões" [label="A. M. Simões"]
+	"J.J. Almeida" -> "A. M. Simões"
+	"José Alves Castro" [label="José Alves Castro"]
+	"J.J. Almeida" -> "José Alves Castro"
+	"Alberto Manuel Simões" [label="Alberto Manuel Simões"]
+	"J.J. Almeida" -> "Alberto Manuel Simões"
+	"J.N. Oliveira" [label="J.N. Oliveira"]
+	"J.J. Almeida" -> "J.N. Oliveira"
+	"Susana Afonso" [label="Susana Afonso"]
+	"J.J. Almeida" -> "Susana Afonso"
+	"Nuno Cardoso" [label="Nuno Cardoso"]
+	"J.J. Almeida" -> "Nuno Cardoso"
+	"J.G. Rocha" [label="J.G. Rocha"]
+	"J.J. Almeida" -> "J.G. Rocha"
+	"Paulo A. Rocha" [label="Paulo A. Rocha"]
+	"J.J. Almeida" -> "Paulo A. Rocha"
+	"Mario Ricardo Henriques" [label="Mario Ricardo Henriques"]
+	"J.J. Almeida" -> "Mario Ricardo Henriques"
+	"Anabela Barreiro" [label="Anabela Barreiro"]
+	"J.J. Almeida" -> "Anabela Barreiro"
+	"Pedro R. Henriques" [label="Pedro R. Henriques"]
+	"J.J. Almeida" -> "Pedro R. Henriques"
+	"Marcirio Chaves" [label="Marcirio Chaves"]
+	"J.J. Almeida" -> "Marcirio Chaves"
+	"J.B. Barros" [label="J.B. Barros"]
+	"J.J. Almeida" -> "J.B. Barros"
+	"Luís Sarmento" [label="Luís Sarmento"]
+	"J.J. Almeida" -> "Luís Sarmento"
+	"Rui Vilela" [label="Rui Vilela"]
+	"J.J. Almeida" -> "Rui Vilela"
+	"Eckhard Bick" [label="Eckhard Bick"]
+	"J.J. Almeida" -> "Eckhard Bick"
+	"Ana Silva" [label="Ana Silva"]
+	"J.J. Almeida" -> "Ana Silva"
+	"Ana Frankenberg-Garcia" [label="Ana Frankenberg-Garcia"]
+	"J.J. Almeida" -> "Ana Frankenberg-Garcia"
+}

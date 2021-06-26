@@ -1,0 +1,3014 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> Call
+Rule 1     Call -> Elementos RUN ( )
+Rule 2     Elementos -> Elementos Elemento
+Rule 3     Elementos -> <empty>
+Rule 4     Elemento -> OperAr
+Rule 5     Elemento -> OperLog
+Rule 6     Elemento -> OperRel
+Rule 7     Elemento -> Atri
+Rule 8     Elemento -> RETURN Var
+Rule 9     Elemento -> Funcao
+Rule 10    Elemento -> Io
+Rule 11    Elemento -> Conditional
+Rule 12    Elemento -> For fimFor fimFor2
+Rule 13    For -> FOR ( Atri ; OperRel
+Rule 14    fimFor -> ; Atri )
+Rule 15    fimFor2 -> { Elementos }
+Rule 16    Conditional -> inicioElse fimElse
+Rule 17    inicioElse -> ELSE
+Rule 18    fimElse -> { Elementos }
+Rule 19    Conditional -> inicioIF fimIF
+Rule 20    fimIF -> { Elementos }
+Rule 21    inicioIF -> IF ( OperRel )
+Rule 22    inicioIF -> IF ( Var )
+Rule 23    Funcao -> FNAM ( ) { Elementos }
+Rule 24    Atri -> VAR [ NUM ]
+Rule 25    Atri -> VAR [ NUM ] = NUM
+Rule 26    Atri -> VAR [ NUM ] = VAR
+Rule 27    Atri -> VAR [ Var ] = NUM
+Rule 28    Atri -> VAR [ Var ] = VAR
+Rule 29    Atri -> INT Var = VAR [ Var ]
+Rule 30    Atri -> INT Var = Funcao
+Rule 31    Atri -> INT Var = OperAr
+Rule 32    Atri -> INT Var = NUM
+Rule 33    Atri -> BOOLEAN Var = OperLog
+Rule 34    Atri -> BOOLEAN Var = OperRel
+Rule 35    Atri -> BOOLEAN Var = BOOL
+Rule 36    Io -> READ ( Var )
+Rule 37    Io -> WRITE NUM
+Rule 38    Io -> WRITE Var
+Rule 39    Io -> WRITE ( TEXTO )
+Rule 40    OperLog -> BOOL AND BOOL
+Rule 41    OperLog -> Var AND Var
+Rule 42    OperLog -> Var AND BOOL
+Rule 43    OperLog -> BOOL AND Var
+Rule 44    OperLog -> BOOL OR BOOL
+Rule 45    OperLog -> Var OR Var
+Rule 46    OperLog -> Var OR BOOL
+Rule 47    OperLog -> BOOL OR Var
+Rule 48    OperAr -> OperAr + Termo
+Rule 49    OperAr -> OperAr - Termo
+Rule 50    OperAr -> Termo
+Rule 51    Termo -> Termo * Factor
+Rule 52    Termo -> Termo / Factor
+Rule 53    Termo -> Termo MOD Factor
+Rule 54    Termo -> Factor
+Rule 55    Factor -> ( OperAr )
+Rule 56    Factor -> NUM
+Rule 57    Factor -> Var
+Rule 58    OperRel -> Factor EQUALS Factor
+Rule 59    OperRel -> Factor INF Factor
+Rule 60    OperRel -> Factor SUP Factor
+Rule 61    OperRel -> Factor INFEQ Factor
+Rule 62    OperRel -> Factor SUPEQ Factor
+Rule 63    Var -> VAR
+
+Terminals, with rules where they appear
+
+(                    : 1 13 21 22 23 36 39 55
+)                    : 1 14 21 22 23 36 39 55
+*                    : 51
++                    : 48
+-                    : 49
+/                    : 52
+;                    : 13 14
+=                    : 25 26 27 28 29 30 31 32 33 34 35
+AND                  : 40 41 42 43
+BOOL                 : 35 40 40 42 43 44 44 46 47
+BOOLEAN              : 33 34 35
+ELSE                 : 17
+EQUALS               : 58
+FNAM                 : 23
+FOR                  : 13
+IF                   : 21 22
+INF                  : 59
+INFEQ                : 61
+INT                  : 29 30 31 32
+MOD                  : 53
+NUM                  : 24 25 25 26 27 32 37 56
+OR                   : 44 45 46 47
+READ                 : 36
+RETURN               : 8
+RUN                  : 1
+SUP                  : 60
+SUPEQ                : 62
+TEXTO                : 39
+VAR                  : 24 25 26 26 27 28 28 29 63
+WRITE                : 37 38 39
+[                    : 24 25 26 27 28 29
+]                    : 24 25 26 27 28 29
+error                : 
+{                    : 15 18 20 23
+}                    : 15 18 20 23
+
+Nonterminals, with rules where they appear
+
+Atri                 : 7 13 14
+Call                 : 0
+Conditional          : 11
+Elemento             : 2
+Elementos            : 1 2 15 18 20 23
+Factor               : 51 52 53 54 58 58 59 59 60 60 61 61 62 62
+For                  : 12
+Funcao               : 9 30
+Io                   : 10
+OperAr               : 4 31 48 49 55
+OperLog              : 5 33
+OperRel              : 6 13 21 34
+Termo                : 48 49 50 51 52 53
+Var                  : 8 22 27 28 29 29 30 31 32 33 34 35 36 38 41 41 42 43 45 45 46 47 57
+fimElse              : 16
+fimFor               : 12
+fimFor2              : 12
+fimIF                : 19
+inicioElse           : 16
+inicioIF             : 19
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . Call
+    (1) Call -> . Elementos RUN ( )
+    (2) Elementos -> . Elementos Elemento
+    (3) Elementos -> .
+
+    RUN             reduce using rule 3 (Elementos -> .)
+    RETURN          reduce using rule 3 (Elementos -> .)
+    BOOL            reduce using rule 3 (Elementos -> .)
+    VAR             reduce using rule 3 (Elementos -> .)
+    INT             reduce using rule 3 (Elementos -> .)
+    BOOLEAN         reduce using rule 3 (Elementos -> .)
+    FNAM            reduce using rule 3 (Elementos -> .)
+    READ            reduce using rule 3 (Elementos -> .)
+    WRITE           reduce using rule 3 (Elementos -> .)
+    FOR             reduce using rule 3 (Elementos -> .)
+    (               reduce using rule 3 (Elementos -> .)
+    NUM             reduce using rule 3 (Elementos -> .)
+    ELSE            reduce using rule 3 (Elementos -> .)
+    IF              reduce using rule 3 (Elementos -> .)
+
+    Call                           shift and go to state 1
+    Elementos                      shift and go to state 2
+
+state 1
+
+    (0) S' -> Call .
+
+
+
+state 2
+
+    (1) Call -> Elementos . RUN ( )
+    (2) Elementos -> Elementos . Elemento
+    (4) Elemento -> . OperAr
+    (5) Elemento -> . OperLog
+    (6) Elemento -> . OperRel
+    (7) Elemento -> . Atri
+    (8) Elemento -> . RETURN Var
+    (9) Elemento -> . Funcao
+    (10) Elemento -> . Io
+    (11) Elemento -> . Conditional
+    (12) Elemento -> . For fimFor fimFor2
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (36) Io -> . READ ( Var )
+    (37) Io -> . WRITE NUM
+    (38) Io -> . WRITE Var
+    (39) Io -> . WRITE ( TEXTO )
+    (16) Conditional -> . inicioElse fimElse
+    (19) Conditional -> . inicioIF fimIF
+    (13) For -> . FOR ( Atri ; OperRel
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (17) inicioElse -> . ELSE
+    (21) inicioIF -> . IF ( OperRel )
+    (22) inicioIF -> . IF ( Var )
+
+    RUN             shift and go to state 3
+    RETURN          shift and go to state 10
+    BOOL            shift and go to state 17
+    VAR             shift and go to state 19
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+    FNAM            shift and go to state 23
+    READ            shift and go to state 24
+    WRITE           shift and go to state 25
+    FOR             shift and go to state 28
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    ELSE            shift and go to state 29
+    IF              shift and go to state 30
+
+    Elemento                       shift and go to state 5
+    OperAr                         shift and go to state 6
+    OperLog                        shift and go to state 7
+    OperRel                        shift and go to state 8
+    Atri                           shift and go to state 9
+    Var                            shift and go to state 11
+    Funcao                         shift and go to state 12
+    Io                             shift and go to state 13
+    Conditional                    shift and go to state 14
+    For                            shift and go to state 15
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 18
+    inicioElse                     shift and go to state 26
+    inicioIF                       shift and go to state 27
+
+state 3
+
+    (1) Call -> Elementos RUN . ( )
+
+    (               shift and go to state 31
+
+
+state 4
+
+    (55) Factor -> ( . OperAr )
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    OperAr                         shift and go to state 32
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 33
+    Var                            shift and go to state 34
+
+state 5
+
+    (2) Elementos -> Elementos Elemento .
+
+    RUN             reduce using rule 2 (Elementos -> Elementos Elemento .)
+    RETURN          reduce using rule 2 (Elementos -> Elementos Elemento .)
+    BOOL            reduce using rule 2 (Elementos -> Elementos Elemento .)
+    VAR             reduce using rule 2 (Elementos -> Elementos Elemento .)
+    INT             reduce using rule 2 (Elementos -> Elementos Elemento .)
+    BOOLEAN         reduce using rule 2 (Elementos -> Elementos Elemento .)
+    FNAM            reduce using rule 2 (Elementos -> Elementos Elemento .)
+    READ            reduce using rule 2 (Elementos -> Elementos Elemento .)
+    WRITE           reduce using rule 2 (Elementos -> Elementos Elemento .)
+    FOR             reduce using rule 2 (Elementos -> Elementos Elemento .)
+    (               reduce using rule 2 (Elementos -> Elementos Elemento .)
+    NUM             reduce using rule 2 (Elementos -> Elementos Elemento .)
+    ELSE            reduce using rule 2 (Elementos -> Elementos Elemento .)
+    IF              reduce using rule 2 (Elementos -> Elementos Elemento .)
+    }               reduce using rule 2 (Elementos -> Elementos Elemento .)
+
+
+state 6
+
+    (4) Elemento -> OperAr .
+    (48) OperAr -> OperAr . + Termo
+    (49) OperAr -> OperAr . - Termo
+
+    RUN             reduce using rule 4 (Elemento -> OperAr .)
+    RETURN          reduce using rule 4 (Elemento -> OperAr .)
+    BOOL            reduce using rule 4 (Elemento -> OperAr .)
+    VAR             reduce using rule 4 (Elemento -> OperAr .)
+    INT             reduce using rule 4 (Elemento -> OperAr .)
+    BOOLEAN         reduce using rule 4 (Elemento -> OperAr .)
+    FNAM            reduce using rule 4 (Elemento -> OperAr .)
+    READ            reduce using rule 4 (Elemento -> OperAr .)
+    WRITE           reduce using rule 4 (Elemento -> OperAr .)
+    FOR             reduce using rule 4 (Elemento -> OperAr .)
+    (               reduce using rule 4 (Elemento -> OperAr .)
+    NUM             reduce using rule 4 (Elemento -> OperAr .)
+    ELSE            reduce using rule 4 (Elemento -> OperAr .)
+    IF              reduce using rule 4 (Elemento -> OperAr .)
+    }               reduce using rule 4 (Elemento -> OperAr .)
+    +               shift and go to state 36
+    -               shift and go to state 37
+
+
+state 7
+
+    (5) Elemento -> OperLog .
+
+    RUN             reduce using rule 5 (Elemento -> OperLog .)
+    RETURN          reduce using rule 5 (Elemento -> OperLog .)
+    BOOL            reduce using rule 5 (Elemento -> OperLog .)
+    VAR             reduce using rule 5 (Elemento -> OperLog .)
+    INT             reduce using rule 5 (Elemento -> OperLog .)
+    BOOLEAN         reduce using rule 5 (Elemento -> OperLog .)
+    FNAM            reduce using rule 5 (Elemento -> OperLog .)
+    READ            reduce using rule 5 (Elemento -> OperLog .)
+    WRITE           reduce using rule 5 (Elemento -> OperLog .)
+    FOR             reduce using rule 5 (Elemento -> OperLog .)
+    (               reduce using rule 5 (Elemento -> OperLog .)
+    NUM             reduce using rule 5 (Elemento -> OperLog .)
+    ELSE            reduce using rule 5 (Elemento -> OperLog .)
+    IF              reduce using rule 5 (Elemento -> OperLog .)
+    }               reduce using rule 5 (Elemento -> OperLog .)
+
+
+state 8
+
+    (6) Elemento -> OperRel .
+
+    RUN             reduce using rule 6 (Elemento -> OperRel .)
+    RETURN          reduce using rule 6 (Elemento -> OperRel .)
+    BOOL            reduce using rule 6 (Elemento -> OperRel .)
+    VAR             reduce using rule 6 (Elemento -> OperRel .)
+    INT             reduce using rule 6 (Elemento -> OperRel .)
+    BOOLEAN         reduce using rule 6 (Elemento -> OperRel .)
+    FNAM            reduce using rule 6 (Elemento -> OperRel .)
+    READ            reduce using rule 6 (Elemento -> OperRel .)
+    WRITE           reduce using rule 6 (Elemento -> OperRel .)
+    FOR             reduce using rule 6 (Elemento -> OperRel .)
+    (               reduce using rule 6 (Elemento -> OperRel .)
+    NUM             reduce using rule 6 (Elemento -> OperRel .)
+    ELSE            reduce using rule 6 (Elemento -> OperRel .)
+    IF              reduce using rule 6 (Elemento -> OperRel .)
+    }               reduce using rule 6 (Elemento -> OperRel .)
+
+
+state 9
+
+    (7) Elemento -> Atri .
+
+    RUN             reduce using rule 7 (Elemento -> Atri .)
+    RETURN          reduce using rule 7 (Elemento -> Atri .)
+    BOOL            reduce using rule 7 (Elemento -> Atri .)
+    VAR             reduce using rule 7 (Elemento -> Atri .)
+    INT             reduce using rule 7 (Elemento -> Atri .)
+    BOOLEAN         reduce using rule 7 (Elemento -> Atri .)
+    FNAM            reduce using rule 7 (Elemento -> Atri .)
+    READ            reduce using rule 7 (Elemento -> Atri .)
+    WRITE           reduce using rule 7 (Elemento -> Atri .)
+    FOR             reduce using rule 7 (Elemento -> Atri .)
+    (               reduce using rule 7 (Elemento -> Atri .)
+    NUM             reduce using rule 7 (Elemento -> Atri .)
+    ELSE            reduce using rule 7 (Elemento -> Atri .)
+    IF              reduce using rule 7 (Elemento -> Atri .)
+    }               reduce using rule 7 (Elemento -> Atri .)
+
+
+state 10
+
+    (8) Elemento -> RETURN . Var
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 38
+
+state 11
+
+    (41) OperLog -> Var . AND Var
+    (42) OperLog -> Var . AND BOOL
+    (45) OperLog -> Var . OR Var
+    (46) OperLog -> Var . OR BOOL
+    (57) Factor -> Var .
+
+    AND             shift and go to state 39
+    OR              shift and go to state 40
+    EQUALS          reduce using rule 57 (Factor -> Var .)
+    INF             reduce using rule 57 (Factor -> Var .)
+    SUP             reduce using rule 57 (Factor -> Var .)
+    INFEQ           reduce using rule 57 (Factor -> Var .)
+    SUPEQ           reduce using rule 57 (Factor -> Var .)
+    *               reduce using rule 57 (Factor -> Var .)
+    /               reduce using rule 57 (Factor -> Var .)
+    MOD             reduce using rule 57 (Factor -> Var .)
+    +               reduce using rule 57 (Factor -> Var .)
+    -               reduce using rule 57 (Factor -> Var .)
+    RUN             reduce using rule 57 (Factor -> Var .)
+    RETURN          reduce using rule 57 (Factor -> Var .)
+    BOOL            reduce using rule 57 (Factor -> Var .)
+    VAR             reduce using rule 57 (Factor -> Var .)
+    INT             reduce using rule 57 (Factor -> Var .)
+    BOOLEAN         reduce using rule 57 (Factor -> Var .)
+    FNAM            reduce using rule 57 (Factor -> Var .)
+    READ            reduce using rule 57 (Factor -> Var .)
+    WRITE           reduce using rule 57 (Factor -> Var .)
+    FOR             reduce using rule 57 (Factor -> Var .)
+    (               reduce using rule 57 (Factor -> Var .)
+    NUM             reduce using rule 57 (Factor -> Var .)
+    ELSE            reduce using rule 57 (Factor -> Var .)
+    IF              reduce using rule 57 (Factor -> Var .)
+    }               reduce using rule 57 (Factor -> Var .)
+
+
+state 12
+
+    (9) Elemento -> Funcao .
+
+    RUN             reduce using rule 9 (Elemento -> Funcao .)
+    RETURN          reduce using rule 9 (Elemento -> Funcao .)
+    BOOL            reduce using rule 9 (Elemento -> Funcao .)
+    VAR             reduce using rule 9 (Elemento -> Funcao .)
+    INT             reduce using rule 9 (Elemento -> Funcao .)
+    BOOLEAN         reduce using rule 9 (Elemento -> Funcao .)
+    FNAM            reduce using rule 9 (Elemento -> Funcao .)
+    READ            reduce using rule 9 (Elemento -> Funcao .)
+    WRITE           reduce using rule 9 (Elemento -> Funcao .)
+    FOR             reduce using rule 9 (Elemento -> Funcao .)
+    (               reduce using rule 9 (Elemento -> Funcao .)
+    NUM             reduce using rule 9 (Elemento -> Funcao .)
+    ELSE            reduce using rule 9 (Elemento -> Funcao .)
+    IF              reduce using rule 9 (Elemento -> Funcao .)
+    }               reduce using rule 9 (Elemento -> Funcao .)
+
+
+state 13
+
+    (10) Elemento -> Io .
+
+    RUN             reduce using rule 10 (Elemento -> Io .)
+    RETURN          reduce using rule 10 (Elemento -> Io .)
+    BOOL            reduce using rule 10 (Elemento -> Io .)
+    VAR             reduce using rule 10 (Elemento -> Io .)
+    INT             reduce using rule 10 (Elemento -> Io .)
+    BOOLEAN         reduce using rule 10 (Elemento -> Io .)
+    FNAM            reduce using rule 10 (Elemento -> Io .)
+    READ            reduce using rule 10 (Elemento -> Io .)
+    WRITE           reduce using rule 10 (Elemento -> Io .)
+    FOR             reduce using rule 10 (Elemento -> Io .)
+    (               reduce using rule 10 (Elemento -> Io .)
+    NUM             reduce using rule 10 (Elemento -> Io .)
+    ELSE            reduce using rule 10 (Elemento -> Io .)
+    IF              reduce using rule 10 (Elemento -> Io .)
+    }               reduce using rule 10 (Elemento -> Io .)
+
+
+state 14
+
+    (11) Elemento -> Conditional .
+
+    RUN             reduce using rule 11 (Elemento -> Conditional .)
+    RETURN          reduce using rule 11 (Elemento -> Conditional .)
+    BOOL            reduce using rule 11 (Elemento -> Conditional .)
+    VAR             reduce using rule 11 (Elemento -> Conditional .)
+    INT             reduce using rule 11 (Elemento -> Conditional .)
+    BOOLEAN         reduce using rule 11 (Elemento -> Conditional .)
+    FNAM            reduce using rule 11 (Elemento -> Conditional .)
+    READ            reduce using rule 11 (Elemento -> Conditional .)
+    WRITE           reduce using rule 11 (Elemento -> Conditional .)
+    FOR             reduce using rule 11 (Elemento -> Conditional .)
+    (               reduce using rule 11 (Elemento -> Conditional .)
+    NUM             reduce using rule 11 (Elemento -> Conditional .)
+    ELSE            reduce using rule 11 (Elemento -> Conditional .)
+    IF              reduce using rule 11 (Elemento -> Conditional .)
+    }               reduce using rule 11 (Elemento -> Conditional .)
+
+
+state 15
+
+    (12) Elemento -> For . fimFor fimFor2
+    (14) fimFor -> . ; Atri )
+
+    ;               shift and go to state 42
+
+    fimFor                         shift and go to state 41
+
+state 16
+
+    (50) OperAr -> Termo .
+    (51) Termo -> Termo . * Factor
+    (52) Termo -> Termo . / Factor
+    (53) Termo -> Termo . MOD Factor
+
+    +               reduce using rule 50 (OperAr -> Termo .)
+    -               reduce using rule 50 (OperAr -> Termo .)
+    RUN             reduce using rule 50 (OperAr -> Termo .)
+    RETURN          reduce using rule 50 (OperAr -> Termo .)
+    BOOL            reduce using rule 50 (OperAr -> Termo .)
+    VAR             reduce using rule 50 (OperAr -> Termo .)
+    INT             reduce using rule 50 (OperAr -> Termo .)
+    BOOLEAN         reduce using rule 50 (OperAr -> Termo .)
+    FNAM            reduce using rule 50 (OperAr -> Termo .)
+    READ            reduce using rule 50 (OperAr -> Termo .)
+    WRITE           reduce using rule 50 (OperAr -> Termo .)
+    FOR             reduce using rule 50 (OperAr -> Termo .)
+    (               reduce using rule 50 (OperAr -> Termo .)
+    NUM             reduce using rule 50 (OperAr -> Termo .)
+    ELSE            reduce using rule 50 (OperAr -> Termo .)
+    IF              reduce using rule 50 (OperAr -> Termo .)
+    )               reduce using rule 50 (OperAr -> Termo .)
+    ;               reduce using rule 50 (OperAr -> Termo .)
+    }               reduce using rule 50 (OperAr -> Termo .)
+    *               shift and go to state 43
+    /               shift and go to state 44
+    MOD             shift and go to state 45
+
+
+state 17
+
+    (40) OperLog -> BOOL . AND BOOL
+    (43) OperLog -> BOOL . AND Var
+    (44) OperLog -> BOOL . OR BOOL
+    (47) OperLog -> BOOL . OR Var
+
+    AND             shift and go to state 46
+    OR              shift and go to state 47
+
+
+state 18
+
+    (58) OperRel -> Factor . EQUALS Factor
+    (59) OperRel -> Factor . INF Factor
+    (60) OperRel -> Factor . SUP Factor
+    (61) OperRel -> Factor . INFEQ Factor
+    (62) OperRel -> Factor . SUPEQ Factor
+    (54) Termo -> Factor .
+
+    EQUALS          shift and go to state 48
+    INF             shift and go to state 49
+    SUP             shift and go to state 50
+    INFEQ           shift and go to state 51
+    SUPEQ           shift and go to state 52
+    *               reduce using rule 54 (Termo -> Factor .)
+    /               reduce using rule 54 (Termo -> Factor .)
+    MOD             reduce using rule 54 (Termo -> Factor .)
+    +               reduce using rule 54 (Termo -> Factor .)
+    -               reduce using rule 54 (Termo -> Factor .)
+    RUN             reduce using rule 54 (Termo -> Factor .)
+    RETURN          reduce using rule 54 (Termo -> Factor .)
+    BOOL            reduce using rule 54 (Termo -> Factor .)
+    VAR             reduce using rule 54 (Termo -> Factor .)
+    INT             reduce using rule 54 (Termo -> Factor .)
+    BOOLEAN         reduce using rule 54 (Termo -> Factor .)
+    FNAM            reduce using rule 54 (Termo -> Factor .)
+    READ            reduce using rule 54 (Termo -> Factor .)
+    WRITE           reduce using rule 54 (Termo -> Factor .)
+    FOR             reduce using rule 54 (Termo -> Factor .)
+    (               reduce using rule 54 (Termo -> Factor .)
+    NUM             reduce using rule 54 (Termo -> Factor .)
+    ELSE            reduce using rule 54 (Termo -> Factor .)
+    IF              reduce using rule 54 (Termo -> Factor .)
+    }               reduce using rule 54 (Termo -> Factor .)
+
+
+state 19
+
+    (24) Atri -> VAR . [ NUM ]
+    (25) Atri -> VAR . [ NUM ] = NUM
+    (26) Atri -> VAR . [ NUM ] = VAR
+    (27) Atri -> VAR . [ Var ] = NUM
+    (28) Atri -> VAR . [ Var ] = VAR
+    (63) Var -> VAR .
+
+    [               shift and go to state 53
+    AND             reduce using rule 63 (Var -> VAR .)
+    OR              reduce using rule 63 (Var -> VAR .)
+    EQUALS          reduce using rule 63 (Var -> VAR .)
+    INF             reduce using rule 63 (Var -> VAR .)
+    SUP             reduce using rule 63 (Var -> VAR .)
+    INFEQ           reduce using rule 63 (Var -> VAR .)
+    SUPEQ           reduce using rule 63 (Var -> VAR .)
+    *               reduce using rule 63 (Var -> VAR .)
+    /               reduce using rule 63 (Var -> VAR .)
+    MOD             reduce using rule 63 (Var -> VAR .)
+    +               reduce using rule 63 (Var -> VAR .)
+    -               reduce using rule 63 (Var -> VAR .)
+    RUN             reduce using rule 63 (Var -> VAR .)
+    RETURN          reduce using rule 63 (Var -> VAR .)
+    BOOL            reduce using rule 63 (Var -> VAR .)
+    VAR             reduce using rule 63 (Var -> VAR .)
+    INT             reduce using rule 63 (Var -> VAR .)
+    BOOLEAN         reduce using rule 63 (Var -> VAR .)
+    FNAM            reduce using rule 63 (Var -> VAR .)
+    READ            reduce using rule 63 (Var -> VAR .)
+    WRITE           reduce using rule 63 (Var -> VAR .)
+    FOR             reduce using rule 63 (Var -> VAR .)
+    (               reduce using rule 63 (Var -> VAR .)
+    NUM             reduce using rule 63 (Var -> VAR .)
+    ELSE            reduce using rule 63 (Var -> VAR .)
+    IF              reduce using rule 63 (Var -> VAR .)
+    }               reduce using rule 63 (Var -> VAR .)
+
+
+state 20
+
+    (56) Factor -> NUM .
+
+    EQUALS          reduce using rule 56 (Factor -> NUM .)
+    INF             reduce using rule 56 (Factor -> NUM .)
+    SUP             reduce using rule 56 (Factor -> NUM .)
+    INFEQ           reduce using rule 56 (Factor -> NUM .)
+    SUPEQ           reduce using rule 56 (Factor -> NUM .)
+    *               reduce using rule 56 (Factor -> NUM .)
+    /               reduce using rule 56 (Factor -> NUM .)
+    MOD             reduce using rule 56 (Factor -> NUM .)
+    +               reduce using rule 56 (Factor -> NUM .)
+    -               reduce using rule 56 (Factor -> NUM .)
+    RUN             reduce using rule 56 (Factor -> NUM .)
+    RETURN          reduce using rule 56 (Factor -> NUM .)
+    BOOL            reduce using rule 56 (Factor -> NUM .)
+    VAR             reduce using rule 56 (Factor -> NUM .)
+    INT             reduce using rule 56 (Factor -> NUM .)
+    BOOLEAN         reduce using rule 56 (Factor -> NUM .)
+    FNAM            reduce using rule 56 (Factor -> NUM .)
+    READ            reduce using rule 56 (Factor -> NUM .)
+    WRITE           reduce using rule 56 (Factor -> NUM .)
+    FOR             reduce using rule 56 (Factor -> NUM .)
+    (               reduce using rule 56 (Factor -> NUM .)
+    NUM             reduce using rule 56 (Factor -> NUM .)
+    ELSE            reduce using rule 56 (Factor -> NUM .)
+    IF              reduce using rule 56 (Factor -> NUM .)
+    )               reduce using rule 56 (Factor -> NUM .)
+    ;               reduce using rule 56 (Factor -> NUM .)
+    }               reduce using rule 56 (Factor -> NUM .)
+
+
+state 21
+
+    (29) Atri -> INT . Var = VAR [ Var ]
+    (30) Atri -> INT . Var = Funcao
+    (31) Atri -> INT . Var = OperAr
+    (32) Atri -> INT . Var = NUM
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 54
+
+state 22
+
+    (33) Atri -> BOOLEAN . Var = OperLog
+    (34) Atri -> BOOLEAN . Var = OperRel
+    (35) Atri -> BOOLEAN . Var = BOOL
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 55
+
+state 23
+
+    (23) Funcao -> FNAM . ( ) { Elementos }
+
+    (               shift and go to state 56
+
+
+state 24
+
+    (36) Io -> READ . ( Var )
+
+    (               shift and go to state 57
+
+
+state 25
+
+    (37) Io -> WRITE . NUM
+    (38) Io -> WRITE . Var
+    (39) Io -> WRITE . ( TEXTO )
+    (63) Var -> . VAR
+
+    NUM             shift and go to state 58
+    (               shift and go to state 60
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 59
+
+state 26
+
+    (16) Conditional -> inicioElse . fimElse
+    (18) fimElse -> . { Elementos }
+
+    {               shift and go to state 62
+
+    fimElse                        shift and go to state 61
+
+state 27
+
+    (19) Conditional -> inicioIF . fimIF
+    (20) fimIF -> . { Elementos }
+
+    {               shift and go to state 64
+
+    fimIF                          shift and go to state 63
+
+state 28
+
+    (13) For -> FOR . ( Atri ; OperRel
+
+    (               shift and go to state 65
+
+
+state 29
+
+    (17) inicioElse -> ELSE .
+
+    {               reduce using rule 17 (inicioElse -> ELSE .)
+
+
+state 30
+
+    (21) inicioIF -> IF . ( OperRel )
+    (22) inicioIF -> IF . ( Var )
+
+    (               shift and go to state 66
+
+
+state 31
+
+    (1) Call -> Elementos RUN ( . )
+
+    )               shift and go to state 67
+
+
+state 32
+
+    (55) Factor -> ( OperAr . )
+    (48) OperAr -> OperAr . + Termo
+    (49) OperAr -> OperAr . - Termo
+
+    )               shift and go to state 68
+    +               shift and go to state 36
+    -               shift and go to state 37
+
+
+state 33
+
+    (54) Termo -> Factor .
+
+    *               reduce using rule 54 (Termo -> Factor .)
+    /               reduce using rule 54 (Termo -> Factor .)
+    MOD             reduce using rule 54 (Termo -> Factor .)
+    )               reduce using rule 54 (Termo -> Factor .)
+    +               reduce using rule 54 (Termo -> Factor .)
+    -               reduce using rule 54 (Termo -> Factor .)
+    RUN             reduce using rule 54 (Termo -> Factor .)
+    RETURN          reduce using rule 54 (Termo -> Factor .)
+    BOOL            reduce using rule 54 (Termo -> Factor .)
+    VAR             reduce using rule 54 (Termo -> Factor .)
+    INT             reduce using rule 54 (Termo -> Factor .)
+    BOOLEAN         reduce using rule 54 (Termo -> Factor .)
+    FNAM            reduce using rule 54 (Termo -> Factor .)
+    READ            reduce using rule 54 (Termo -> Factor .)
+    WRITE           reduce using rule 54 (Termo -> Factor .)
+    FOR             reduce using rule 54 (Termo -> Factor .)
+    (               reduce using rule 54 (Termo -> Factor .)
+    NUM             reduce using rule 54 (Termo -> Factor .)
+    ELSE            reduce using rule 54 (Termo -> Factor .)
+    IF              reduce using rule 54 (Termo -> Factor .)
+    ;               reduce using rule 54 (Termo -> Factor .)
+    }               reduce using rule 54 (Termo -> Factor .)
+
+
+state 34
+
+    (57) Factor -> Var .
+
+    *               reduce using rule 57 (Factor -> Var .)
+    /               reduce using rule 57 (Factor -> Var .)
+    MOD             reduce using rule 57 (Factor -> Var .)
+    )               reduce using rule 57 (Factor -> Var .)
+    +               reduce using rule 57 (Factor -> Var .)
+    -               reduce using rule 57 (Factor -> Var .)
+    RUN             reduce using rule 57 (Factor -> Var .)
+    RETURN          reduce using rule 57 (Factor -> Var .)
+    BOOL            reduce using rule 57 (Factor -> Var .)
+    VAR             reduce using rule 57 (Factor -> Var .)
+    INT             reduce using rule 57 (Factor -> Var .)
+    BOOLEAN         reduce using rule 57 (Factor -> Var .)
+    FNAM            reduce using rule 57 (Factor -> Var .)
+    READ            reduce using rule 57 (Factor -> Var .)
+    WRITE           reduce using rule 57 (Factor -> Var .)
+    FOR             reduce using rule 57 (Factor -> Var .)
+    (               reduce using rule 57 (Factor -> Var .)
+    NUM             reduce using rule 57 (Factor -> Var .)
+    ELSE            reduce using rule 57 (Factor -> Var .)
+    IF              reduce using rule 57 (Factor -> Var .)
+    ;               reduce using rule 57 (Factor -> Var .)
+    }               reduce using rule 57 (Factor -> Var .)
+    EQUALS          reduce using rule 57 (Factor -> Var .)
+    INF             reduce using rule 57 (Factor -> Var .)
+    SUP             reduce using rule 57 (Factor -> Var .)
+    INFEQ           reduce using rule 57 (Factor -> Var .)
+    SUPEQ           reduce using rule 57 (Factor -> Var .)
+
+
+state 35
+
+    (63) Var -> VAR .
+
+    *               reduce using rule 63 (Var -> VAR .)
+    /               reduce using rule 63 (Var -> VAR .)
+    MOD             reduce using rule 63 (Var -> VAR .)
+    )               reduce using rule 63 (Var -> VAR .)
+    +               reduce using rule 63 (Var -> VAR .)
+    -               reduce using rule 63 (Var -> VAR .)
+    RUN             reduce using rule 63 (Var -> VAR .)
+    RETURN          reduce using rule 63 (Var -> VAR .)
+    BOOL            reduce using rule 63 (Var -> VAR .)
+    VAR             reduce using rule 63 (Var -> VAR .)
+    INT             reduce using rule 63 (Var -> VAR .)
+    BOOLEAN         reduce using rule 63 (Var -> VAR .)
+    FNAM            reduce using rule 63 (Var -> VAR .)
+    READ            reduce using rule 63 (Var -> VAR .)
+    WRITE           reduce using rule 63 (Var -> VAR .)
+    FOR             reduce using rule 63 (Var -> VAR .)
+    (               reduce using rule 63 (Var -> VAR .)
+    NUM             reduce using rule 63 (Var -> VAR .)
+    ELSE            reduce using rule 63 (Var -> VAR .)
+    IF              reduce using rule 63 (Var -> VAR .)
+    }               reduce using rule 63 (Var -> VAR .)
+    =               reduce using rule 63 (Var -> VAR .)
+    ;               reduce using rule 63 (Var -> VAR .)
+    ]               reduce using rule 63 (Var -> VAR .)
+    EQUALS          reduce using rule 63 (Var -> VAR .)
+    INF             reduce using rule 63 (Var -> VAR .)
+    SUP             reduce using rule 63 (Var -> VAR .)
+    INFEQ           reduce using rule 63 (Var -> VAR .)
+    SUPEQ           reduce using rule 63 (Var -> VAR .)
+    AND             reduce using rule 63 (Var -> VAR .)
+    OR              reduce using rule 63 (Var -> VAR .)
+
+
+state 36
+
+    (48) OperAr -> OperAr + . Termo
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Termo                          shift and go to state 69
+    Factor                         shift and go to state 33
+    Var                            shift and go to state 34
+
+state 37
+
+    (49) OperAr -> OperAr - . Termo
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Termo                          shift and go to state 70
+    Factor                         shift and go to state 33
+    Var                            shift and go to state 34
+
+state 38
+
+    (8) Elemento -> RETURN Var .
+
+    RUN             reduce using rule 8 (Elemento -> RETURN Var .)
+    RETURN          reduce using rule 8 (Elemento -> RETURN Var .)
+    BOOL            reduce using rule 8 (Elemento -> RETURN Var .)
+    VAR             reduce using rule 8 (Elemento -> RETURN Var .)
+    INT             reduce using rule 8 (Elemento -> RETURN Var .)
+    BOOLEAN         reduce using rule 8 (Elemento -> RETURN Var .)
+    FNAM            reduce using rule 8 (Elemento -> RETURN Var .)
+    READ            reduce using rule 8 (Elemento -> RETURN Var .)
+    WRITE           reduce using rule 8 (Elemento -> RETURN Var .)
+    FOR             reduce using rule 8 (Elemento -> RETURN Var .)
+    (               reduce using rule 8 (Elemento -> RETURN Var .)
+    NUM             reduce using rule 8 (Elemento -> RETURN Var .)
+    ELSE            reduce using rule 8 (Elemento -> RETURN Var .)
+    IF              reduce using rule 8 (Elemento -> RETURN Var .)
+    }               reduce using rule 8 (Elemento -> RETURN Var .)
+
+
+state 39
+
+    (41) OperLog -> Var AND . Var
+    (42) OperLog -> Var AND . BOOL
+    (63) Var -> . VAR
+
+    BOOL            shift and go to state 72
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 71
+
+state 40
+
+    (45) OperLog -> Var OR . Var
+    (46) OperLog -> Var OR . BOOL
+    (63) Var -> . VAR
+
+    BOOL            shift and go to state 74
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 73
+
+state 41
+
+    (12) Elemento -> For fimFor . fimFor2
+    (15) fimFor2 -> . { Elementos }
+
+    {               shift and go to state 76
+
+    fimFor2                        shift and go to state 75
+
+state 42
+
+    (14) fimFor -> ; . Atri )
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+
+    VAR             shift and go to state 78
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+
+    Atri                           shift and go to state 77
+
+state 43
+
+    (51) Termo -> Termo * . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 79
+    Var                            shift and go to state 34
+
+state 44
+
+    (52) Termo -> Termo / . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 80
+    Var                            shift and go to state 34
+
+state 45
+
+    (53) Termo -> Termo MOD . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 81
+    Var                            shift and go to state 34
+
+state 46
+
+    (40) OperLog -> BOOL AND . BOOL
+    (43) OperLog -> BOOL AND . Var
+    (63) Var -> . VAR
+
+    BOOL            shift and go to state 82
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 83
+
+state 47
+
+    (44) OperLog -> BOOL OR . BOOL
+    (47) OperLog -> BOOL OR . Var
+    (63) Var -> . VAR
+
+    BOOL            shift and go to state 84
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 85
+
+state 48
+
+    (58) OperRel -> Factor EQUALS . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 86
+    Var                            shift and go to state 34
+
+state 49
+
+    (59) OperRel -> Factor INF . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 87
+    Var                            shift and go to state 34
+
+state 50
+
+    (60) OperRel -> Factor SUP . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 88
+    Var                            shift and go to state 34
+
+state 51
+
+    (61) OperRel -> Factor INFEQ . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 89
+    Var                            shift and go to state 34
+
+state 52
+
+    (62) OperRel -> Factor SUPEQ . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    Factor                         shift and go to state 90
+    Var                            shift and go to state 34
+
+state 53
+
+    (24) Atri -> VAR [ . NUM ]
+    (25) Atri -> VAR [ . NUM ] = NUM
+    (26) Atri -> VAR [ . NUM ] = VAR
+    (27) Atri -> VAR [ . Var ] = NUM
+    (28) Atri -> VAR [ . Var ] = VAR
+    (63) Var -> . VAR
+
+    NUM             shift and go to state 91
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 92
+
+state 54
+
+    (29) Atri -> INT Var . = VAR [ Var ]
+    (30) Atri -> INT Var . = Funcao
+    (31) Atri -> INT Var . = OperAr
+    (32) Atri -> INT Var . = NUM
+
+    =               shift and go to state 93
+
+
+state 55
+
+    (33) Atri -> BOOLEAN Var . = OperLog
+    (34) Atri -> BOOLEAN Var . = OperRel
+    (35) Atri -> BOOLEAN Var . = BOOL
+
+    =               shift and go to state 94
+
+
+state 56
+
+    (23) Funcao -> FNAM ( . ) { Elementos }
+
+    )               shift and go to state 95
+
+
+state 57
+
+    (36) Io -> READ ( . Var )
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 96
+
+state 58
+
+    (37) Io -> WRITE NUM .
+
+    RUN             reduce using rule 37 (Io -> WRITE NUM .)
+    RETURN          reduce using rule 37 (Io -> WRITE NUM .)
+    BOOL            reduce using rule 37 (Io -> WRITE NUM .)
+    VAR             reduce using rule 37 (Io -> WRITE NUM .)
+    INT             reduce using rule 37 (Io -> WRITE NUM .)
+    BOOLEAN         reduce using rule 37 (Io -> WRITE NUM .)
+    FNAM            reduce using rule 37 (Io -> WRITE NUM .)
+    READ            reduce using rule 37 (Io -> WRITE NUM .)
+    WRITE           reduce using rule 37 (Io -> WRITE NUM .)
+    FOR             reduce using rule 37 (Io -> WRITE NUM .)
+    (               reduce using rule 37 (Io -> WRITE NUM .)
+    NUM             reduce using rule 37 (Io -> WRITE NUM .)
+    ELSE            reduce using rule 37 (Io -> WRITE NUM .)
+    IF              reduce using rule 37 (Io -> WRITE NUM .)
+    }               reduce using rule 37 (Io -> WRITE NUM .)
+
+
+state 59
+
+    (38) Io -> WRITE Var .
+
+    RUN             reduce using rule 38 (Io -> WRITE Var .)
+    RETURN          reduce using rule 38 (Io -> WRITE Var .)
+    BOOL            reduce using rule 38 (Io -> WRITE Var .)
+    VAR             reduce using rule 38 (Io -> WRITE Var .)
+    INT             reduce using rule 38 (Io -> WRITE Var .)
+    BOOLEAN         reduce using rule 38 (Io -> WRITE Var .)
+    FNAM            reduce using rule 38 (Io -> WRITE Var .)
+    READ            reduce using rule 38 (Io -> WRITE Var .)
+    WRITE           reduce using rule 38 (Io -> WRITE Var .)
+    FOR             reduce using rule 38 (Io -> WRITE Var .)
+    (               reduce using rule 38 (Io -> WRITE Var .)
+    NUM             reduce using rule 38 (Io -> WRITE Var .)
+    ELSE            reduce using rule 38 (Io -> WRITE Var .)
+    IF              reduce using rule 38 (Io -> WRITE Var .)
+    }               reduce using rule 38 (Io -> WRITE Var .)
+
+
+state 60
+
+    (39) Io -> WRITE ( . TEXTO )
+
+    TEXTO           shift and go to state 97
+
+
+state 61
+
+    (16) Conditional -> inicioElse fimElse .
+
+    RUN             reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    RETURN          reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    BOOL            reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    VAR             reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    INT             reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    BOOLEAN         reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    FNAM            reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    READ            reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    WRITE           reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    FOR             reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    (               reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    NUM             reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    ELSE            reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    IF              reduce using rule 16 (Conditional -> inicioElse fimElse .)
+    }               reduce using rule 16 (Conditional -> inicioElse fimElse .)
+
+
+state 62
+
+    (18) fimElse -> { . Elementos }
+    (2) Elementos -> . Elementos Elemento
+    (3) Elementos -> .
+
+    }               reduce using rule 3 (Elementos -> .)
+    RETURN          reduce using rule 3 (Elementos -> .)
+    BOOL            reduce using rule 3 (Elementos -> .)
+    VAR             reduce using rule 3 (Elementos -> .)
+    INT             reduce using rule 3 (Elementos -> .)
+    BOOLEAN         reduce using rule 3 (Elementos -> .)
+    FNAM            reduce using rule 3 (Elementos -> .)
+    READ            reduce using rule 3 (Elementos -> .)
+    WRITE           reduce using rule 3 (Elementos -> .)
+    FOR             reduce using rule 3 (Elementos -> .)
+    (               reduce using rule 3 (Elementos -> .)
+    NUM             reduce using rule 3 (Elementos -> .)
+    ELSE            reduce using rule 3 (Elementos -> .)
+    IF              reduce using rule 3 (Elementos -> .)
+
+    Elementos                      shift and go to state 98
+
+state 63
+
+    (19) Conditional -> inicioIF fimIF .
+
+    RUN             reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    RETURN          reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    BOOL            reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    VAR             reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    INT             reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    BOOLEAN         reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    FNAM            reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    READ            reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    WRITE           reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    FOR             reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    (               reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    NUM             reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    ELSE            reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    IF              reduce using rule 19 (Conditional -> inicioIF fimIF .)
+    }               reduce using rule 19 (Conditional -> inicioIF fimIF .)
+
+
+state 64
+
+    (20) fimIF -> { . Elementos }
+    (2) Elementos -> . Elementos Elemento
+    (3) Elementos -> .
+
+    }               reduce using rule 3 (Elementos -> .)
+    RETURN          reduce using rule 3 (Elementos -> .)
+    BOOL            reduce using rule 3 (Elementos -> .)
+    VAR             reduce using rule 3 (Elementos -> .)
+    INT             reduce using rule 3 (Elementos -> .)
+    BOOLEAN         reduce using rule 3 (Elementos -> .)
+    FNAM            reduce using rule 3 (Elementos -> .)
+    READ            reduce using rule 3 (Elementos -> .)
+    WRITE           reduce using rule 3 (Elementos -> .)
+    FOR             reduce using rule 3 (Elementos -> .)
+    (               reduce using rule 3 (Elementos -> .)
+    NUM             reduce using rule 3 (Elementos -> .)
+    ELSE            reduce using rule 3 (Elementos -> .)
+    IF              reduce using rule 3 (Elementos -> .)
+
+    Elementos                      shift and go to state 99
+
+state 65
+
+    (13) For -> FOR ( . Atri ; OperRel
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+
+    VAR             shift and go to state 78
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+
+    Atri                           shift and go to state 100
+
+state 66
+
+    (21) inicioIF -> IF ( . OperRel )
+    (22) inicioIF -> IF ( . Var )
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+
+    VAR             shift and go to state 35
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+
+    OperRel                        shift and go to state 101
+    Var                            shift and go to state 102
+    Factor                         shift and go to state 103
+
+state 67
+
+    (1) Call -> Elementos RUN ( ) .
+
+    $end            reduce using rule 1 (Call -> Elementos RUN ( ) .)
+
+
+state 68
+
+    (55) Factor -> ( OperAr ) .
+
+    EQUALS          reduce using rule 55 (Factor -> ( OperAr ) .)
+    INF             reduce using rule 55 (Factor -> ( OperAr ) .)
+    SUP             reduce using rule 55 (Factor -> ( OperAr ) .)
+    INFEQ           reduce using rule 55 (Factor -> ( OperAr ) .)
+    SUPEQ           reduce using rule 55 (Factor -> ( OperAr ) .)
+    *               reduce using rule 55 (Factor -> ( OperAr ) .)
+    /               reduce using rule 55 (Factor -> ( OperAr ) .)
+    MOD             reduce using rule 55 (Factor -> ( OperAr ) .)
+    +               reduce using rule 55 (Factor -> ( OperAr ) .)
+    -               reduce using rule 55 (Factor -> ( OperAr ) .)
+    RUN             reduce using rule 55 (Factor -> ( OperAr ) .)
+    RETURN          reduce using rule 55 (Factor -> ( OperAr ) .)
+    BOOL            reduce using rule 55 (Factor -> ( OperAr ) .)
+    VAR             reduce using rule 55 (Factor -> ( OperAr ) .)
+    INT             reduce using rule 55 (Factor -> ( OperAr ) .)
+    BOOLEAN         reduce using rule 55 (Factor -> ( OperAr ) .)
+    FNAM            reduce using rule 55 (Factor -> ( OperAr ) .)
+    READ            reduce using rule 55 (Factor -> ( OperAr ) .)
+    WRITE           reduce using rule 55 (Factor -> ( OperAr ) .)
+    FOR             reduce using rule 55 (Factor -> ( OperAr ) .)
+    (               reduce using rule 55 (Factor -> ( OperAr ) .)
+    NUM             reduce using rule 55 (Factor -> ( OperAr ) .)
+    ELSE            reduce using rule 55 (Factor -> ( OperAr ) .)
+    IF              reduce using rule 55 (Factor -> ( OperAr ) .)
+    )               reduce using rule 55 (Factor -> ( OperAr ) .)
+    ;               reduce using rule 55 (Factor -> ( OperAr ) .)
+    }               reduce using rule 55 (Factor -> ( OperAr ) .)
+
+
+state 69
+
+    (48) OperAr -> OperAr + Termo .
+    (51) Termo -> Termo . * Factor
+    (52) Termo -> Termo . / Factor
+    (53) Termo -> Termo . MOD Factor
+
+    +               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    -               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    RUN             reduce using rule 48 (OperAr -> OperAr + Termo .)
+    RETURN          reduce using rule 48 (OperAr -> OperAr + Termo .)
+    BOOL            reduce using rule 48 (OperAr -> OperAr + Termo .)
+    VAR             reduce using rule 48 (OperAr -> OperAr + Termo .)
+    INT             reduce using rule 48 (OperAr -> OperAr + Termo .)
+    BOOLEAN         reduce using rule 48 (OperAr -> OperAr + Termo .)
+    FNAM            reduce using rule 48 (OperAr -> OperAr + Termo .)
+    READ            reduce using rule 48 (OperAr -> OperAr + Termo .)
+    WRITE           reduce using rule 48 (OperAr -> OperAr + Termo .)
+    FOR             reduce using rule 48 (OperAr -> OperAr + Termo .)
+    (               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    NUM             reduce using rule 48 (OperAr -> OperAr + Termo .)
+    ELSE            reduce using rule 48 (OperAr -> OperAr + Termo .)
+    IF              reduce using rule 48 (OperAr -> OperAr + Termo .)
+    )               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    ;               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    }               reduce using rule 48 (OperAr -> OperAr + Termo .)
+    *               shift and go to state 43
+    /               shift and go to state 44
+    MOD             shift and go to state 45
+
+
+state 70
+
+    (49) OperAr -> OperAr - Termo .
+    (51) Termo -> Termo . * Factor
+    (52) Termo -> Termo . / Factor
+    (53) Termo -> Termo . MOD Factor
+
+    +               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    -               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    RUN             reduce using rule 49 (OperAr -> OperAr - Termo .)
+    RETURN          reduce using rule 49 (OperAr -> OperAr - Termo .)
+    BOOL            reduce using rule 49 (OperAr -> OperAr - Termo .)
+    VAR             reduce using rule 49 (OperAr -> OperAr - Termo .)
+    INT             reduce using rule 49 (OperAr -> OperAr - Termo .)
+    BOOLEAN         reduce using rule 49 (OperAr -> OperAr - Termo .)
+    FNAM            reduce using rule 49 (OperAr -> OperAr - Termo .)
+    READ            reduce using rule 49 (OperAr -> OperAr - Termo .)
+    WRITE           reduce using rule 49 (OperAr -> OperAr - Termo .)
+    FOR             reduce using rule 49 (OperAr -> OperAr - Termo .)
+    (               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    NUM             reduce using rule 49 (OperAr -> OperAr - Termo .)
+    ELSE            reduce using rule 49 (OperAr -> OperAr - Termo .)
+    IF              reduce using rule 49 (OperAr -> OperAr - Termo .)
+    )               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    ;               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    }               reduce using rule 49 (OperAr -> OperAr - Termo .)
+    *               shift and go to state 43
+    /               shift and go to state 44
+    MOD             shift and go to state 45
+
+
+state 71
+
+    (41) OperLog -> Var AND Var .
+
+    RUN             reduce using rule 41 (OperLog -> Var AND Var .)
+    RETURN          reduce using rule 41 (OperLog -> Var AND Var .)
+    BOOL            reduce using rule 41 (OperLog -> Var AND Var .)
+    VAR             reduce using rule 41 (OperLog -> Var AND Var .)
+    INT             reduce using rule 41 (OperLog -> Var AND Var .)
+    BOOLEAN         reduce using rule 41 (OperLog -> Var AND Var .)
+    FNAM            reduce using rule 41 (OperLog -> Var AND Var .)
+    READ            reduce using rule 41 (OperLog -> Var AND Var .)
+    WRITE           reduce using rule 41 (OperLog -> Var AND Var .)
+    FOR             reduce using rule 41 (OperLog -> Var AND Var .)
+    (               reduce using rule 41 (OperLog -> Var AND Var .)
+    NUM             reduce using rule 41 (OperLog -> Var AND Var .)
+    ELSE            reduce using rule 41 (OperLog -> Var AND Var .)
+    IF              reduce using rule 41 (OperLog -> Var AND Var .)
+    )               reduce using rule 41 (OperLog -> Var AND Var .)
+    ;               reduce using rule 41 (OperLog -> Var AND Var .)
+    }               reduce using rule 41 (OperLog -> Var AND Var .)
+
+
+state 72
+
+    (42) OperLog -> Var AND BOOL .
+
+    RUN             reduce using rule 42 (OperLog -> Var AND BOOL .)
+    RETURN          reduce using rule 42 (OperLog -> Var AND BOOL .)
+    BOOL            reduce using rule 42 (OperLog -> Var AND BOOL .)
+    VAR             reduce using rule 42 (OperLog -> Var AND BOOL .)
+    INT             reduce using rule 42 (OperLog -> Var AND BOOL .)
+    BOOLEAN         reduce using rule 42 (OperLog -> Var AND BOOL .)
+    FNAM            reduce using rule 42 (OperLog -> Var AND BOOL .)
+    READ            reduce using rule 42 (OperLog -> Var AND BOOL .)
+    WRITE           reduce using rule 42 (OperLog -> Var AND BOOL .)
+    FOR             reduce using rule 42 (OperLog -> Var AND BOOL .)
+    (               reduce using rule 42 (OperLog -> Var AND BOOL .)
+    NUM             reduce using rule 42 (OperLog -> Var AND BOOL .)
+    ELSE            reduce using rule 42 (OperLog -> Var AND BOOL .)
+    IF              reduce using rule 42 (OperLog -> Var AND BOOL .)
+    )               reduce using rule 42 (OperLog -> Var AND BOOL .)
+    ;               reduce using rule 42 (OperLog -> Var AND BOOL .)
+    }               reduce using rule 42 (OperLog -> Var AND BOOL .)
+
+
+state 73
+
+    (45) OperLog -> Var OR Var .
+
+    RUN             reduce using rule 45 (OperLog -> Var OR Var .)
+    RETURN          reduce using rule 45 (OperLog -> Var OR Var .)
+    BOOL            reduce using rule 45 (OperLog -> Var OR Var .)
+    VAR             reduce using rule 45 (OperLog -> Var OR Var .)
+    INT             reduce using rule 45 (OperLog -> Var OR Var .)
+    BOOLEAN         reduce using rule 45 (OperLog -> Var OR Var .)
+    FNAM            reduce using rule 45 (OperLog -> Var OR Var .)
+    READ            reduce using rule 45 (OperLog -> Var OR Var .)
+    WRITE           reduce using rule 45 (OperLog -> Var OR Var .)
+    FOR             reduce using rule 45 (OperLog -> Var OR Var .)
+    (               reduce using rule 45 (OperLog -> Var OR Var .)
+    NUM             reduce using rule 45 (OperLog -> Var OR Var .)
+    ELSE            reduce using rule 45 (OperLog -> Var OR Var .)
+    IF              reduce using rule 45 (OperLog -> Var OR Var .)
+    )               reduce using rule 45 (OperLog -> Var OR Var .)
+    ;               reduce using rule 45 (OperLog -> Var OR Var .)
+    }               reduce using rule 45 (OperLog -> Var OR Var .)
+
+
+state 74
+
+    (46) OperLog -> Var OR BOOL .
+
+    RUN             reduce using rule 46 (OperLog -> Var OR BOOL .)
+    RETURN          reduce using rule 46 (OperLog -> Var OR BOOL .)
+    BOOL            reduce using rule 46 (OperLog -> Var OR BOOL .)
+    VAR             reduce using rule 46 (OperLog -> Var OR BOOL .)
+    INT             reduce using rule 46 (OperLog -> Var OR BOOL .)
+    BOOLEAN         reduce using rule 46 (OperLog -> Var OR BOOL .)
+    FNAM            reduce using rule 46 (OperLog -> Var OR BOOL .)
+    READ            reduce using rule 46 (OperLog -> Var OR BOOL .)
+    WRITE           reduce using rule 46 (OperLog -> Var OR BOOL .)
+    FOR             reduce using rule 46 (OperLog -> Var OR BOOL .)
+    (               reduce using rule 46 (OperLog -> Var OR BOOL .)
+    NUM             reduce using rule 46 (OperLog -> Var OR BOOL .)
+    ELSE            reduce using rule 46 (OperLog -> Var OR BOOL .)
+    IF              reduce using rule 46 (OperLog -> Var OR BOOL .)
+    )               reduce using rule 46 (OperLog -> Var OR BOOL .)
+    ;               reduce using rule 46 (OperLog -> Var OR BOOL .)
+    }               reduce using rule 46 (OperLog -> Var OR BOOL .)
+
+
+state 75
+
+    (12) Elemento -> For fimFor fimFor2 .
+
+    RUN             reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    RETURN          reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    BOOL            reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    VAR             reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    INT             reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    BOOLEAN         reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    FNAM            reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    READ            reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    WRITE           reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    FOR             reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    (               reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    NUM             reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    ELSE            reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    IF              reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+    }               reduce using rule 12 (Elemento -> For fimFor fimFor2 .)
+
+
+state 76
+
+    (15) fimFor2 -> { . Elementos }
+    (2) Elementos -> . Elementos Elemento
+    (3) Elementos -> .
+
+    }               reduce using rule 3 (Elementos -> .)
+    RETURN          reduce using rule 3 (Elementos -> .)
+    BOOL            reduce using rule 3 (Elementos -> .)
+    VAR             reduce using rule 3 (Elementos -> .)
+    INT             reduce using rule 3 (Elementos -> .)
+    BOOLEAN         reduce using rule 3 (Elementos -> .)
+    FNAM            reduce using rule 3 (Elementos -> .)
+    READ            reduce using rule 3 (Elementos -> .)
+    WRITE           reduce using rule 3 (Elementos -> .)
+    FOR             reduce using rule 3 (Elementos -> .)
+    (               reduce using rule 3 (Elementos -> .)
+    NUM             reduce using rule 3 (Elementos -> .)
+    ELSE            reduce using rule 3 (Elementos -> .)
+    IF              reduce using rule 3 (Elementos -> .)
+
+    Elementos                      shift and go to state 104
+
+state 77
+
+    (14) fimFor -> ; Atri . )
+
+    )               shift and go to state 105
+
+
+state 78
+
+    (24) Atri -> VAR . [ NUM ]
+    (25) Atri -> VAR . [ NUM ] = NUM
+    (26) Atri -> VAR . [ NUM ] = VAR
+    (27) Atri -> VAR . [ Var ] = NUM
+    (28) Atri -> VAR . [ Var ] = VAR
+
+    [               shift and go to state 53
+
+
+state 79
+
+    (51) Termo -> Termo * Factor .
+
+    *               reduce using rule 51 (Termo -> Termo * Factor .)
+    /               reduce using rule 51 (Termo -> Termo * Factor .)
+    MOD             reduce using rule 51 (Termo -> Termo * Factor .)
+    +               reduce using rule 51 (Termo -> Termo * Factor .)
+    -               reduce using rule 51 (Termo -> Termo * Factor .)
+    RUN             reduce using rule 51 (Termo -> Termo * Factor .)
+    RETURN          reduce using rule 51 (Termo -> Termo * Factor .)
+    BOOL            reduce using rule 51 (Termo -> Termo * Factor .)
+    VAR             reduce using rule 51 (Termo -> Termo * Factor .)
+    INT             reduce using rule 51 (Termo -> Termo * Factor .)
+    BOOLEAN         reduce using rule 51 (Termo -> Termo * Factor .)
+    FNAM            reduce using rule 51 (Termo -> Termo * Factor .)
+    READ            reduce using rule 51 (Termo -> Termo * Factor .)
+    WRITE           reduce using rule 51 (Termo -> Termo * Factor .)
+    FOR             reduce using rule 51 (Termo -> Termo * Factor .)
+    (               reduce using rule 51 (Termo -> Termo * Factor .)
+    NUM             reduce using rule 51 (Termo -> Termo * Factor .)
+    ELSE            reduce using rule 51 (Termo -> Termo * Factor .)
+    IF              reduce using rule 51 (Termo -> Termo * Factor .)
+    )               reduce using rule 51 (Termo -> Termo * Factor .)
+    ;               reduce using rule 51 (Termo -> Termo * Factor .)
+    }               reduce using rule 51 (Termo -> Termo * Factor .)
+
+
+state 80
+
+    (52) Termo -> Termo / Factor .
+
+    *               reduce using rule 52 (Termo -> Termo / Factor .)
+    /               reduce using rule 52 (Termo -> Termo / Factor .)
+    MOD             reduce using rule 52 (Termo -> Termo / Factor .)
+    +               reduce using rule 52 (Termo -> Termo / Factor .)
+    -               reduce using rule 52 (Termo -> Termo / Factor .)
+    RUN             reduce using rule 52 (Termo -> Termo / Factor .)
+    RETURN          reduce using rule 52 (Termo -> Termo / Factor .)
+    BOOL            reduce using rule 52 (Termo -> Termo / Factor .)
+    VAR             reduce using rule 52 (Termo -> Termo / Factor .)
+    INT             reduce using rule 52 (Termo -> Termo / Factor .)
+    BOOLEAN         reduce using rule 52 (Termo -> Termo / Factor .)
+    FNAM            reduce using rule 52 (Termo -> Termo / Factor .)
+    READ            reduce using rule 52 (Termo -> Termo / Factor .)
+    WRITE           reduce using rule 52 (Termo -> Termo / Factor .)
+    FOR             reduce using rule 52 (Termo -> Termo / Factor .)
+    (               reduce using rule 52 (Termo -> Termo / Factor .)
+    NUM             reduce using rule 52 (Termo -> Termo / Factor .)
+    ELSE            reduce using rule 52 (Termo -> Termo / Factor .)
+    IF              reduce using rule 52 (Termo -> Termo / Factor .)
+    )               reduce using rule 52 (Termo -> Termo / Factor .)
+    ;               reduce using rule 52 (Termo -> Termo / Factor .)
+    }               reduce using rule 52 (Termo -> Termo / Factor .)
+
+
+state 81
+
+    (53) Termo -> Termo MOD Factor .
+
+    *               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    /               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    MOD             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    +               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    -               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    RUN             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    RETURN          reduce using rule 53 (Termo -> Termo MOD Factor .)
+    BOOL            reduce using rule 53 (Termo -> Termo MOD Factor .)
+    VAR             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    INT             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    BOOLEAN         reduce using rule 53 (Termo -> Termo MOD Factor .)
+    FNAM            reduce using rule 53 (Termo -> Termo MOD Factor .)
+    READ            reduce using rule 53 (Termo -> Termo MOD Factor .)
+    WRITE           reduce using rule 53 (Termo -> Termo MOD Factor .)
+    FOR             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    (               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    NUM             reduce using rule 53 (Termo -> Termo MOD Factor .)
+    ELSE            reduce using rule 53 (Termo -> Termo MOD Factor .)
+    IF              reduce using rule 53 (Termo -> Termo MOD Factor .)
+    )               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    ;               reduce using rule 53 (Termo -> Termo MOD Factor .)
+    }               reduce using rule 53 (Termo -> Termo MOD Factor .)
+
+
+state 82
+
+    (40) OperLog -> BOOL AND BOOL .
+
+    RUN             reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    RETURN          reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    BOOL            reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    VAR             reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    INT             reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    BOOLEAN         reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    FNAM            reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    READ            reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    WRITE           reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    FOR             reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    (               reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    NUM             reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    ELSE            reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    IF              reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    )               reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    ;               reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+    }               reduce using rule 40 (OperLog -> BOOL AND BOOL .)
+
+
+state 83
+
+    (43) OperLog -> BOOL AND Var .
+
+    RUN             reduce using rule 43 (OperLog -> BOOL AND Var .)
+    RETURN          reduce using rule 43 (OperLog -> BOOL AND Var .)
+    BOOL            reduce using rule 43 (OperLog -> BOOL AND Var .)
+    VAR             reduce using rule 43 (OperLog -> BOOL AND Var .)
+    INT             reduce using rule 43 (OperLog -> BOOL AND Var .)
+    BOOLEAN         reduce using rule 43 (OperLog -> BOOL AND Var .)
+    FNAM            reduce using rule 43 (OperLog -> BOOL AND Var .)
+    READ            reduce using rule 43 (OperLog -> BOOL AND Var .)
+    WRITE           reduce using rule 43 (OperLog -> BOOL AND Var .)
+    FOR             reduce using rule 43 (OperLog -> BOOL AND Var .)
+    (               reduce using rule 43 (OperLog -> BOOL AND Var .)
+    NUM             reduce using rule 43 (OperLog -> BOOL AND Var .)
+    ELSE            reduce using rule 43 (OperLog -> BOOL AND Var .)
+    IF              reduce using rule 43 (OperLog -> BOOL AND Var .)
+    )               reduce using rule 43 (OperLog -> BOOL AND Var .)
+    ;               reduce using rule 43 (OperLog -> BOOL AND Var .)
+    }               reduce using rule 43 (OperLog -> BOOL AND Var .)
+
+
+state 84
+
+    (44) OperLog -> BOOL OR BOOL .
+
+    RUN             reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    RETURN          reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    BOOL            reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    VAR             reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    INT             reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    BOOLEAN         reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    FNAM            reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    READ            reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    WRITE           reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    FOR             reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    (               reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    NUM             reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    ELSE            reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    IF              reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    )               reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    ;               reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+    }               reduce using rule 44 (OperLog -> BOOL OR BOOL .)
+
+
+state 85
+
+    (47) OperLog -> BOOL OR Var .
+
+    RUN             reduce using rule 47 (OperLog -> BOOL OR Var .)
+    RETURN          reduce using rule 47 (OperLog -> BOOL OR Var .)
+    BOOL            reduce using rule 47 (OperLog -> BOOL OR Var .)
+    VAR             reduce using rule 47 (OperLog -> BOOL OR Var .)
+    INT             reduce using rule 47 (OperLog -> BOOL OR Var .)
+    BOOLEAN         reduce using rule 47 (OperLog -> BOOL OR Var .)
+    FNAM            reduce using rule 47 (OperLog -> BOOL OR Var .)
+    READ            reduce using rule 47 (OperLog -> BOOL OR Var .)
+    WRITE           reduce using rule 47 (OperLog -> BOOL OR Var .)
+    FOR             reduce using rule 47 (OperLog -> BOOL OR Var .)
+    (               reduce using rule 47 (OperLog -> BOOL OR Var .)
+    NUM             reduce using rule 47 (OperLog -> BOOL OR Var .)
+    ELSE            reduce using rule 47 (OperLog -> BOOL OR Var .)
+    IF              reduce using rule 47 (OperLog -> BOOL OR Var .)
+    )               reduce using rule 47 (OperLog -> BOOL OR Var .)
+    ;               reduce using rule 47 (OperLog -> BOOL OR Var .)
+    }               reduce using rule 47 (OperLog -> BOOL OR Var .)
+
+
+state 86
+
+    (58) OperRel -> Factor EQUALS Factor .
+
+    RUN             reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    RETURN          reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    BOOL            reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    VAR             reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    INT             reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    BOOLEAN         reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    FNAM            reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    READ            reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    WRITE           reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    FOR             reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    (               reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    NUM             reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    ELSE            reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    IF              reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    )               reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    ;               reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+    }               reduce using rule 58 (OperRel -> Factor EQUALS Factor .)
+
+
+state 87
+
+    (59) OperRel -> Factor INF Factor .
+
+    RUN             reduce using rule 59 (OperRel -> Factor INF Factor .)
+    RETURN          reduce using rule 59 (OperRel -> Factor INF Factor .)
+    BOOL            reduce using rule 59 (OperRel -> Factor INF Factor .)
+    VAR             reduce using rule 59 (OperRel -> Factor INF Factor .)
+    INT             reduce using rule 59 (OperRel -> Factor INF Factor .)
+    BOOLEAN         reduce using rule 59 (OperRel -> Factor INF Factor .)
+    FNAM            reduce using rule 59 (OperRel -> Factor INF Factor .)
+    READ            reduce using rule 59 (OperRel -> Factor INF Factor .)
+    WRITE           reduce using rule 59 (OperRel -> Factor INF Factor .)
+    FOR             reduce using rule 59 (OperRel -> Factor INF Factor .)
+    (               reduce using rule 59 (OperRel -> Factor INF Factor .)
+    NUM             reduce using rule 59 (OperRel -> Factor INF Factor .)
+    ELSE            reduce using rule 59 (OperRel -> Factor INF Factor .)
+    IF              reduce using rule 59 (OperRel -> Factor INF Factor .)
+    )               reduce using rule 59 (OperRel -> Factor INF Factor .)
+    ;               reduce using rule 59 (OperRel -> Factor INF Factor .)
+    }               reduce using rule 59 (OperRel -> Factor INF Factor .)
+
+
+state 88
+
+    (60) OperRel -> Factor SUP Factor .
+
+    RUN             reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    RETURN          reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    BOOL            reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    VAR             reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    INT             reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    BOOLEAN         reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    FNAM            reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    READ            reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    WRITE           reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    FOR             reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    (               reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    NUM             reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    ELSE            reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    IF              reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    )               reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    ;               reduce using rule 60 (OperRel -> Factor SUP Factor .)
+    }               reduce using rule 60 (OperRel -> Factor SUP Factor .)
+
+
+state 89
+
+    (61) OperRel -> Factor INFEQ Factor .
+
+    RUN             reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    RETURN          reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    BOOL            reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    VAR             reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    INT             reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    BOOLEAN         reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    FNAM            reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    READ            reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    WRITE           reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    FOR             reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    (               reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    NUM             reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    ELSE            reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    IF              reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    )               reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    ;               reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+    }               reduce using rule 61 (OperRel -> Factor INFEQ Factor .)
+
+
+state 90
+
+    (62) OperRel -> Factor SUPEQ Factor .
+
+    RUN             reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    RETURN          reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    BOOL            reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    VAR             reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    INT             reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    BOOLEAN         reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    FNAM            reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    READ            reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    WRITE           reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    FOR             reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    (               reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    NUM             reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    ELSE            reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    IF              reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    )               reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    ;               reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+    }               reduce using rule 62 (OperRel -> Factor SUPEQ Factor .)
+
+
+state 91
+
+    (24) Atri -> VAR [ NUM . ]
+    (25) Atri -> VAR [ NUM . ] = NUM
+    (26) Atri -> VAR [ NUM . ] = VAR
+
+    ]               shift and go to state 106
+
+
+state 92
+
+    (27) Atri -> VAR [ Var . ] = NUM
+    (28) Atri -> VAR [ Var . ] = VAR
+
+    ]               shift and go to state 107
+
+
+state 93
+
+    (29) Atri -> INT Var = . VAR [ Var ]
+    (30) Atri -> INT Var = . Funcao
+    (31) Atri -> INT Var = . OperAr
+    (32) Atri -> INT Var = . NUM
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 108
+    NUM             shift and go to state 111
+    FNAM            shift and go to state 23
+    (               shift and go to state 4
+
+    Var                            shift and go to state 34
+    Funcao                         shift and go to state 109
+    OperAr                         shift and go to state 110
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 33
+
+state 94
+
+    (33) Atri -> BOOLEAN Var = . OperLog
+    (34) Atri -> BOOLEAN Var = . OperRel
+    (35) Atri -> BOOLEAN Var = . BOOL
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+
+    BOOL            shift and go to state 114
+    VAR             shift and go to state 35
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+
+    Var                            shift and go to state 11
+    OperLog                        shift and go to state 112
+    OperRel                        shift and go to state 113
+    Factor                         shift and go to state 103
+
+state 95
+
+    (23) Funcao -> FNAM ( ) . { Elementos }
+
+    {               shift and go to state 115
+
+
+state 96
+
+    (36) Io -> READ ( Var . )
+
+    )               shift and go to state 116
+
+
+state 97
+
+    (39) Io -> WRITE ( TEXTO . )
+
+    )               shift and go to state 117
+
+
+state 98
+
+    (18) fimElse -> { Elementos . }
+    (2) Elementos -> Elementos . Elemento
+    (4) Elemento -> . OperAr
+    (5) Elemento -> . OperLog
+    (6) Elemento -> . OperRel
+    (7) Elemento -> . Atri
+    (8) Elemento -> . RETURN Var
+    (9) Elemento -> . Funcao
+    (10) Elemento -> . Io
+    (11) Elemento -> . Conditional
+    (12) Elemento -> . For fimFor fimFor2
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (36) Io -> . READ ( Var )
+    (37) Io -> . WRITE NUM
+    (38) Io -> . WRITE Var
+    (39) Io -> . WRITE ( TEXTO )
+    (16) Conditional -> . inicioElse fimElse
+    (19) Conditional -> . inicioIF fimIF
+    (13) For -> . FOR ( Atri ; OperRel
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (17) inicioElse -> . ELSE
+    (21) inicioIF -> . IF ( OperRel )
+    (22) inicioIF -> . IF ( Var )
+
+    }               shift and go to state 118
+    RETURN          shift and go to state 10
+    BOOL            shift and go to state 17
+    VAR             shift and go to state 19
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+    FNAM            shift and go to state 23
+    READ            shift and go to state 24
+    WRITE           shift and go to state 25
+    FOR             shift and go to state 28
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    ELSE            shift and go to state 29
+    IF              shift and go to state 30
+
+    Elemento                       shift and go to state 5
+    OperAr                         shift and go to state 6
+    OperLog                        shift and go to state 7
+    OperRel                        shift and go to state 8
+    Atri                           shift and go to state 9
+    Var                            shift and go to state 11
+    Funcao                         shift and go to state 12
+    Io                             shift and go to state 13
+    Conditional                    shift and go to state 14
+    For                            shift and go to state 15
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 18
+    inicioElse                     shift and go to state 26
+    inicioIF                       shift and go to state 27
+
+state 99
+
+    (20) fimIF -> { Elementos . }
+    (2) Elementos -> Elementos . Elemento
+    (4) Elemento -> . OperAr
+    (5) Elemento -> . OperLog
+    (6) Elemento -> . OperRel
+    (7) Elemento -> . Atri
+    (8) Elemento -> . RETURN Var
+    (9) Elemento -> . Funcao
+    (10) Elemento -> . Io
+    (11) Elemento -> . Conditional
+    (12) Elemento -> . For fimFor fimFor2
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (36) Io -> . READ ( Var )
+    (37) Io -> . WRITE NUM
+    (38) Io -> . WRITE Var
+    (39) Io -> . WRITE ( TEXTO )
+    (16) Conditional -> . inicioElse fimElse
+    (19) Conditional -> . inicioIF fimIF
+    (13) For -> . FOR ( Atri ; OperRel
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (17) inicioElse -> . ELSE
+    (21) inicioIF -> . IF ( OperRel )
+    (22) inicioIF -> . IF ( Var )
+
+    }               shift and go to state 119
+    RETURN          shift and go to state 10
+    BOOL            shift and go to state 17
+    VAR             shift and go to state 19
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+    FNAM            shift and go to state 23
+    READ            shift and go to state 24
+    WRITE           shift and go to state 25
+    FOR             shift and go to state 28
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    ELSE            shift and go to state 29
+    IF              shift and go to state 30
+
+    Elemento                       shift and go to state 5
+    OperAr                         shift and go to state 6
+    OperLog                        shift and go to state 7
+    OperRel                        shift and go to state 8
+    Atri                           shift and go to state 9
+    Var                            shift and go to state 11
+    Funcao                         shift and go to state 12
+    Io                             shift and go to state 13
+    Conditional                    shift and go to state 14
+    For                            shift and go to state 15
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 18
+    inicioElse                     shift and go to state 26
+    inicioIF                       shift and go to state 27
+
+state 100
+
+    (13) For -> FOR ( Atri . ; OperRel
+
+    ;               shift and go to state 120
+
+
+state 101
+
+    (21) inicioIF -> IF ( OperRel . )
+
+    )               shift and go to state 121
+
+
+state 102
+
+    (22) inicioIF -> IF ( Var . )
+    (57) Factor -> Var .
+
+    )               shift and go to state 122
+    EQUALS          reduce using rule 57 (Factor -> Var .)
+    INF             reduce using rule 57 (Factor -> Var .)
+    SUP             reduce using rule 57 (Factor -> Var .)
+    INFEQ           reduce using rule 57 (Factor -> Var .)
+    SUPEQ           reduce using rule 57 (Factor -> Var .)
+
+
+state 103
+
+    (58) OperRel -> Factor . EQUALS Factor
+    (59) OperRel -> Factor . INF Factor
+    (60) OperRel -> Factor . SUP Factor
+    (61) OperRel -> Factor . INFEQ Factor
+    (62) OperRel -> Factor . SUPEQ Factor
+
+    EQUALS          shift and go to state 48
+    INF             shift and go to state 49
+    SUP             shift and go to state 50
+    INFEQ           shift and go to state 51
+    SUPEQ           shift and go to state 52
+
+
+state 104
+
+    (15) fimFor2 -> { Elementos . }
+    (2) Elementos -> Elementos . Elemento
+    (4) Elemento -> . OperAr
+    (5) Elemento -> . OperLog
+    (6) Elemento -> . OperRel
+    (7) Elemento -> . Atri
+    (8) Elemento -> . RETURN Var
+    (9) Elemento -> . Funcao
+    (10) Elemento -> . Io
+    (11) Elemento -> . Conditional
+    (12) Elemento -> . For fimFor fimFor2
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (36) Io -> . READ ( Var )
+    (37) Io -> . WRITE NUM
+    (38) Io -> . WRITE Var
+    (39) Io -> . WRITE ( TEXTO )
+    (16) Conditional -> . inicioElse fimElse
+    (19) Conditional -> . inicioIF fimIF
+    (13) For -> . FOR ( Atri ; OperRel
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (17) inicioElse -> . ELSE
+    (21) inicioIF -> . IF ( OperRel )
+    (22) inicioIF -> . IF ( Var )
+
+    }               shift and go to state 123
+    RETURN          shift and go to state 10
+    BOOL            shift and go to state 17
+    VAR             shift and go to state 19
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+    FNAM            shift and go to state 23
+    READ            shift and go to state 24
+    WRITE           shift and go to state 25
+    FOR             shift and go to state 28
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    ELSE            shift and go to state 29
+    IF              shift and go to state 30
+
+    Elemento                       shift and go to state 5
+    OperAr                         shift and go to state 6
+    OperLog                        shift and go to state 7
+    OperRel                        shift and go to state 8
+    Atri                           shift and go to state 9
+    Var                            shift and go to state 11
+    Funcao                         shift and go to state 12
+    Io                             shift and go to state 13
+    Conditional                    shift and go to state 14
+    For                            shift and go to state 15
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 18
+    inicioElse                     shift and go to state 26
+    inicioIF                       shift and go to state 27
+
+state 105
+
+    (14) fimFor -> ; Atri ) .
+
+    {               reduce using rule 14 (fimFor -> ; Atri ) .)
+
+
+state 106
+
+    (24) Atri -> VAR [ NUM ] .
+    (25) Atri -> VAR [ NUM ] . = NUM
+    (26) Atri -> VAR [ NUM ] . = VAR
+
+    RUN             reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    RETURN          reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    BOOL            reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    VAR             reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    INT             reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    BOOLEAN         reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    FNAM            reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    READ            reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    WRITE           reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    FOR             reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    (               reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    NUM             reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    ELSE            reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    IF              reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    )               reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    ;               reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    }               reduce using rule 24 (Atri -> VAR [ NUM ] .)
+    =               shift and go to state 124
+
+
+state 107
+
+    (27) Atri -> VAR [ Var ] . = NUM
+    (28) Atri -> VAR [ Var ] . = VAR
+
+    =               shift and go to state 125
+
+
+state 108
+
+    (29) Atri -> INT Var = VAR . [ Var ]
+    (63) Var -> VAR .
+
+    [               shift and go to state 126
+    *               reduce using rule 63 (Var -> VAR .)
+    /               reduce using rule 63 (Var -> VAR .)
+    MOD             reduce using rule 63 (Var -> VAR .)
+    +               reduce using rule 63 (Var -> VAR .)
+    -               reduce using rule 63 (Var -> VAR .)
+    RUN             reduce using rule 63 (Var -> VAR .)
+    RETURN          reduce using rule 63 (Var -> VAR .)
+    BOOL            reduce using rule 63 (Var -> VAR .)
+    VAR             reduce using rule 63 (Var -> VAR .)
+    INT             reduce using rule 63 (Var -> VAR .)
+    BOOLEAN         reduce using rule 63 (Var -> VAR .)
+    FNAM            reduce using rule 63 (Var -> VAR .)
+    READ            reduce using rule 63 (Var -> VAR .)
+    WRITE           reduce using rule 63 (Var -> VAR .)
+    FOR             reduce using rule 63 (Var -> VAR .)
+    (               reduce using rule 63 (Var -> VAR .)
+    NUM             reduce using rule 63 (Var -> VAR .)
+    ELSE            reduce using rule 63 (Var -> VAR .)
+    IF              reduce using rule 63 (Var -> VAR .)
+    )               reduce using rule 63 (Var -> VAR .)
+    ;               reduce using rule 63 (Var -> VAR .)
+    }               reduce using rule 63 (Var -> VAR .)
+
+
+state 109
+
+    (30) Atri -> INT Var = Funcao .
+
+    RUN             reduce using rule 30 (Atri -> INT Var = Funcao .)
+    RETURN          reduce using rule 30 (Atri -> INT Var = Funcao .)
+    BOOL            reduce using rule 30 (Atri -> INT Var = Funcao .)
+    VAR             reduce using rule 30 (Atri -> INT Var = Funcao .)
+    INT             reduce using rule 30 (Atri -> INT Var = Funcao .)
+    BOOLEAN         reduce using rule 30 (Atri -> INT Var = Funcao .)
+    FNAM            reduce using rule 30 (Atri -> INT Var = Funcao .)
+    READ            reduce using rule 30 (Atri -> INT Var = Funcao .)
+    WRITE           reduce using rule 30 (Atri -> INT Var = Funcao .)
+    FOR             reduce using rule 30 (Atri -> INT Var = Funcao .)
+    (               reduce using rule 30 (Atri -> INT Var = Funcao .)
+    NUM             reduce using rule 30 (Atri -> INT Var = Funcao .)
+    ELSE            reduce using rule 30 (Atri -> INT Var = Funcao .)
+    IF              reduce using rule 30 (Atri -> INT Var = Funcao .)
+    )               reduce using rule 30 (Atri -> INT Var = Funcao .)
+    ;               reduce using rule 30 (Atri -> INT Var = Funcao .)
+    }               reduce using rule 30 (Atri -> INT Var = Funcao .)
+
+
+state 110
+
+    (31) Atri -> INT Var = OperAr .
+    (48) OperAr -> OperAr . + Termo
+    (49) OperAr -> OperAr . - Termo
+
+    RUN             reduce using rule 31 (Atri -> INT Var = OperAr .)
+    RETURN          reduce using rule 31 (Atri -> INT Var = OperAr .)
+    BOOL            reduce using rule 31 (Atri -> INT Var = OperAr .)
+    VAR             reduce using rule 31 (Atri -> INT Var = OperAr .)
+    INT             reduce using rule 31 (Atri -> INT Var = OperAr .)
+    BOOLEAN         reduce using rule 31 (Atri -> INT Var = OperAr .)
+    FNAM            reduce using rule 31 (Atri -> INT Var = OperAr .)
+    READ            reduce using rule 31 (Atri -> INT Var = OperAr .)
+    WRITE           reduce using rule 31 (Atri -> INT Var = OperAr .)
+    FOR             reduce using rule 31 (Atri -> INT Var = OperAr .)
+    (               reduce using rule 31 (Atri -> INT Var = OperAr .)
+    NUM             reduce using rule 31 (Atri -> INT Var = OperAr .)
+    ELSE            reduce using rule 31 (Atri -> INT Var = OperAr .)
+    IF              reduce using rule 31 (Atri -> INT Var = OperAr .)
+    )               reduce using rule 31 (Atri -> INT Var = OperAr .)
+    ;               reduce using rule 31 (Atri -> INT Var = OperAr .)
+    }               reduce using rule 31 (Atri -> INT Var = OperAr .)
+    +               shift and go to state 36
+    -               shift and go to state 37
+
+
+state 111
+
+    (32) Atri -> INT Var = NUM .
+    (56) Factor -> NUM .
+
+  ! reduce/reduce conflict for RUN resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for RETURN resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for BOOL resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for VAR resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for INT resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for BOOLEAN resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for FNAM resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for READ resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for WRITE resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for FOR resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for ( resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for NUM resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for ELSE resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for IF resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for ) resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for ; resolved using rule 32 (Atri -> INT Var = NUM .)
+  ! reduce/reduce conflict for } resolved using rule 32 (Atri -> INT Var = NUM .)
+    RUN             reduce using rule 32 (Atri -> INT Var = NUM .)
+    RETURN          reduce using rule 32 (Atri -> INT Var = NUM .)
+    BOOL            reduce using rule 32 (Atri -> INT Var = NUM .)
+    VAR             reduce using rule 32 (Atri -> INT Var = NUM .)
+    INT             reduce using rule 32 (Atri -> INT Var = NUM .)
+    BOOLEAN         reduce using rule 32 (Atri -> INT Var = NUM .)
+    FNAM            reduce using rule 32 (Atri -> INT Var = NUM .)
+    READ            reduce using rule 32 (Atri -> INT Var = NUM .)
+    WRITE           reduce using rule 32 (Atri -> INT Var = NUM .)
+    FOR             reduce using rule 32 (Atri -> INT Var = NUM .)
+    (               reduce using rule 32 (Atri -> INT Var = NUM .)
+    NUM             reduce using rule 32 (Atri -> INT Var = NUM .)
+    ELSE            reduce using rule 32 (Atri -> INT Var = NUM .)
+    IF              reduce using rule 32 (Atri -> INT Var = NUM .)
+    )               reduce using rule 32 (Atri -> INT Var = NUM .)
+    ;               reduce using rule 32 (Atri -> INT Var = NUM .)
+    }               reduce using rule 32 (Atri -> INT Var = NUM .)
+    *               reduce using rule 56 (Factor -> NUM .)
+    /               reduce using rule 56 (Factor -> NUM .)
+    MOD             reduce using rule 56 (Factor -> NUM .)
+    +               reduce using rule 56 (Factor -> NUM .)
+    -               reduce using rule 56 (Factor -> NUM .)
+
+  ! RUN             [ reduce using rule 56 (Factor -> NUM .) ]
+  ! RETURN          [ reduce using rule 56 (Factor -> NUM .) ]
+  ! BOOL            [ reduce using rule 56 (Factor -> NUM .) ]
+  ! VAR             [ reduce using rule 56 (Factor -> NUM .) ]
+  ! INT             [ reduce using rule 56 (Factor -> NUM .) ]
+  ! BOOLEAN         [ reduce using rule 56 (Factor -> NUM .) ]
+  ! FNAM            [ reduce using rule 56 (Factor -> NUM .) ]
+  ! READ            [ reduce using rule 56 (Factor -> NUM .) ]
+  ! WRITE           [ reduce using rule 56 (Factor -> NUM .) ]
+  ! FOR             [ reduce using rule 56 (Factor -> NUM .) ]
+  ! (               [ reduce using rule 56 (Factor -> NUM .) ]
+  ! NUM             [ reduce using rule 56 (Factor -> NUM .) ]
+  ! ELSE            [ reduce using rule 56 (Factor -> NUM .) ]
+  ! IF              [ reduce using rule 56 (Factor -> NUM .) ]
+  ! )               [ reduce using rule 56 (Factor -> NUM .) ]
+  ! ;               [ reduce using rule 56 (Factor -> NUM .) ]
+  ! }               [ reduce using rule 56 (Factor -> NUM .) ]
+
+
+state 112
+
+    (33) Atri -> BOOLEAN Var = OperLog .
+
+    RUN             reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    RETURN          reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    BOOL            reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    VAR             reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    INT             reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    BOOLEAN         reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    FNAM            reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    READ            reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    WRITE           reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    FOR             reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    (               reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    NUM             reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    ELSE            reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    IF              reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    )               reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    ;               reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+    }               reduce using rule 33 (Atri -> BOOLEAN Var = OperLog .)
+
+
+state 113
+
+    (34) Atri -> BOOLEAN Var = OperRel .
+
+    RUN             reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    RETURN          reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    BOOL            reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    VAR             reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    INT             reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    BOOLEAN         reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    FNAM            reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    READ            reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    WRITE           reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    FOR             reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    (               reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    NUM             reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    ELSE            reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    IF              reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    )               reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    ;               reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+    }               reduce using rule 34 (Atri -> BOOLEAN Var = OperRel .)
+
+
+state 114
+
+    (35) Atri -> BOOLEAN Var = BOOL .
+    (40) OperLog -> BOOL . AND BOOL
+    (43) OperLog -> BOOL . AND Var
+    (44) OperLog -> BOOL . OR BOOL
+    (47) OperLog -> BOOL . OR Var
+
+    RUN             reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    RETURN          reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    BOOL            reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    VAR             reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    INT             reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    BOOLEAN         reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    FNAM            reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    READ            reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    WRITE           reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    FOR             reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    (               reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    NUM             reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    ELSE            reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    IF              reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    )               reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    ;               reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    }               reduce using rule 35 (Atri -> BOOLEAN Var = BOOL .)
+    AND             shift and go to state 46
+    OR              shift and go to state 47
+
+
+state 115
+
+    (23) Funcao -> FNAM ( ) { . Elementos }
+    (2) Elementos -> . Elementos Elemento
+    (3) Elementos -> .
+
+    }               reduce using rule 3 (Elementos -> .)
+    RETURN          reduce using rule 3 (Elementos -> .)
+    BOOL            reduce using rule 3 (Elementos -> .)
+    VAR             reduce using rule 3 (Elementos -> .)
+    INT             reduce using rule 3 (Elementos -> .)
+    BOOLEAN         reduce using rule 3 (Elementos -> .)
+    FNAM            reduce using rule 3 (Elementos -> .)
+    READ            reduce using rule 3 (Elementos -> .)
+    WRITE           reduce using rule 3 (Elementos -> .)
+    FOR             reduce using rule 3 (Elementos -> .)
+    (               reduce using rule 3 (Elementos -> .)
+    NUM             reduce using rule 3 (Elementos -> .)
+    ELSE            reduce using rule 3 (Elementos -> .)
+    IF              reduce using rule 3 (Elementos -> .)
+
+    Elementos                      shift and go to state 127
+
+state 116
+
+    (36) Io -> READ ( Var ) .
+
+    RUN             reduce using rule 36 (Io -> READ ( Var ) .)
+    RETURN          reduce using rule 36 (Io -> READ ( Var ) .)
+    BOOL            reduce using rule 36 (Io -> READ ( Var ) .)
+    VAR             reduce using rule 36 (Io -> READ ( Var ) .)
+    INT             reduce using rule 36 (Io -> READ ( Var ) .)
+    BOOLEAN         reduce using rule 36 (Io -> READ ( Var ) .)
+    FNAM            reduce using rule 36 (Io -> READ ( Var ) .)
+    READ            reduce using rule 36 (Io -> READ ( Var ) .)
+    WRITE           reduce using rule 36 (Io -> READ ( Var ) .)
+    FOR             reduce using rule 36 (Io -> READ ( Var ) .)
+    (               reduce using rule 36 (Io -> READ ( Var ) .)
+    NUM             reduce using rule 36 (Io -> READ ( Var ) .)
+    ELSE            reduce using rule 36 (Io -> READ ( Var ) .)
+    IF              reduce using rule 36 (Io -> READ ( Var ) .)
+    }               reduce using rule 36 (Io -> READ ( Var ) .)
+
+
+state 117
+
+    (39) Io -> WRITE ( TEXTO ) .
+
+    RUN             reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    RETURN          reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    BOOL            reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    VAR             reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    INT             reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    BOOLEAN         reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    FNAM            reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    READ            reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    WRITE           reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    FOR             reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    (               reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    NUM             reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    ELSE            reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    IF              reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+    }               reduce using rule 39 (Io -> WRITE ( TEXTO ) .)
+
+
+state 118
+
+    (18) fimElse -> { Elementos } .
+
+    RUN             reduce using rule 18 (fimElse -> { Elementos } .)
+    RETURN          reduce using rule 18 (fimElse -> { Elementos } .)
+    BOOL            reduce using rule 18 (fimElse -> { Elementos } .)
+    VAR             reduce using rule 18 (fimElse -> { Elementos } .)
+    INT             reduce using rule 18 (fimElse -> { Elementos } .)
+    BOOLEAN         reduce using rule 18 (fimElse -> { Elementos } .)
+    FNAM            reduce using rule 18 (fimElse -> { Elementos } .)
+    READ            reduce using rule 18 (fimElse -> { Elementos } .)
+    WRITE           reduce using rule 18 (fimElse -> { Elementos } .)
+    FOR             reduce using rule 18 (fimElse -> { Elementos } .)
+    (               reduce using rule 18 (fimElse -> { Elementos } .)
+    NUM             reduce using rule 18 (fimElse -> { Elementos } .)
+    ELSE            reduce using rule 18 (fimElse -> { Elementos } .)
+    IF              reduce using rule 18 (fimElse -> { Elementos } .)
+    }               reduce using rule 18 (fimElse -> { Elementos } .)
+
+
+state 119
+
+    (20) fimIF -> { Elementos } .
+
+    RUN             reduce using rule 20 (fimIF -> { Elementos } .)
+    RETURN          reduce using rule 20 (fimIF -> { Elementos } .)
+    BOOL            reduce using rule 20 (fimIF -> { Elementos } .)
+    VAR             reduce using rule 20 (fimIF -> { Elementos } .)
+    INT             reduce using rule 20 (fimIF -> { Elementos } .)
+    BOOLEAN         reduce using rule 20 (fimIF -> { Elementos } .)
+    FNAM            reduce using rule 20 (fimIF -> { Elementos } .)
+    READ            reduce using rule 20 (fimIF -> { Elementos } .)
+    WRITE           reduce using rule 20 (fimIF -> { Elementos } .)
+    FOR             reduce using rule 20 (fimIF -> { Elementos } .)
+    (               reduce using rule 20 (fimIF -> { Elementos } .)
+    NUM             reduce using rule 20 (fimIF -> { Elementos } .)
+    ELSE            reduce using rule 20 (fimIF -> { Elementos } .)
+    IF              reduce using rule 20 (fimIF -> { Elementos } .)
+    }               reduce using rule 20 (fimIF -> { Elementos } .)
+
+
+state 120
+
+    (13) For -> FOR ( Atri ; . OperRel
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (63) Var -> . VAR
+
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    VAR             shift and go to state 35
+
+    OperRel                        shift and go to state 128
+    Factor                         shift and go to state 103
+    Var                            shift and go to state 34
+
+state 121
+
+    (21) inicioIF -> IF ( OperRel ) .
+
+    {               reduce using rule 21 (inicioIF -> IF ( OperRel ) .)
+
+
+state 122
+
+    (22) inicioIF -> IF ( Var ) .
+
+    {               reduce using rule 22 (inicioIF -> IF ( Var ) .)
+
+
+state 123
+
+    (15) fimFor2 -> { Elementos } .
+
+    RUN             reduce using rule 15 (fimFor2 -> { Elementos } .)
+    RETURN          reduce using rule 15 (fimFor2 -> { Elementos } .)
+    BOOL            reduce using rule 15 (fimFor2 -> { Elementos } .)
+    VAR             reduce using rule 15 (fimFor2 -> { Elementos } .)
+    INT             reduce using rule 15 (fimFor2 -> { Elementos } .)
+    BOOLEAN         reduce using rule 15 (fimFor2 -> { Elementos } .)
+    FNAM            reduce using rule 15 (fimFor2 -> { Elementos } .)
+    READ            reduce using rule 15 (fimFor2 -> { Elementos } .)
+    WRITE           reduce using rule 15 (fimFor2 -> { Elementos } .)
+    FOR             reduce using rule 15 (fimFor2 -> { Elementos } .)
+    (               reduce using rule 15 (fimFor2 -> { Elementos } .)
+    NUM             reduce using rule 15 (fimFor2 -> { Elementos } .)
+    ELSE            reduce using rule 15 (fimFor2 -> { Elementos } .)
+    IF              reduce using rule 15 (fimFor2 -> { Elementos } .)
+    }               reduce using rule 15 (fimFor2 -> { Elementos } .)
+
+
+state 124
+
+    (25) Atri -> VAR [ NUM ] = . NUM
+    (26) Atri -> VAR [ NUM ] = . VAR
+
+    NUM             shift and go to state 130
+    VAR             shift and go to state 129
+
+
+state 125
+
+    (27) Atri -> VAR [ Var ] = . NUM
+    (28) Atri -> VAR [ Var ] = . VAR
+
+    NUM             shift and go to state 132
+    VAR             shift and go to state 131
+
+
+state 126
+
+    (29) Atri -> INT Var = VAR [ . Var ]
+    (63) Var -> . VAR
+
+    VAR             shift and go to state 35
+
+    Var                            shift and go to state 133
+
+state 127
+
+    (23) Funcao -> FNAM ( ) { Elementos . }
+    (2) Elementos -> Elementos . Elemento
+    (4) Elemento -> . OperAr
+    (5) Elemento -> . OperLog
+    (6) Elemento -> . OperRel
+    (7) Elemento -> . Atri
+    (8) Elemento -> . RETURN Var
+    (9) Elemento -> . Funcao
+    (10) Elemento -> . Io
+    (11) Elemento -> . Conditional
+    (12) Elemento -> . For fimFor fimFor2
+    (48) OperAr -> . OperAr + Termo
+    (49) OperAr -> . OperAr - Termo
+    (50) OperAr -> . Termo
+    (40) OperLog -> . BOOL AND BOOL
+    (41) OperLog -> . Var AND Var
+    (42) OperLog -> . Var AND BOOL
+    (43) OperLog -> . BOOL AND Var
+    (44) OperLog -> . BOOL OR BOOL
+    (45) OperLog -> . Var OR Var
+    (46) OperLog -> . Var OR BOOL
+    (47) OperLog -> . BOOL OR Var
+    (58) OperRel -> . Factor EQUALS Factor
+    (59) OperRel -> . Factor INF Factor
+    (60) OperRel -> . Factor SUP Factor
+    (61) OperRel -> . Factor INFEQ Factor
+    (62) OperRel -> . Factor SUPEQ Factor
+    (24) Atri -> . VAR [ NUM ]
+    (25) Atri -> . VAR [ NUM ] = NUM
+    (26) Atri -> . VAR [ NUM ] = VAR
+    (27) Atri -> . VAR [ Var ] = NUM
+    (28) Atri -> . VAR [ Var ] = VAR
+    (29) Atri -> . INT Var = VAR [ Var ]
+    (30) Atri -> . INT Var = Funcao
+    (31) Atri -> . INT Var = OperAr
+    (32) Atri -> . INT Var = NUM
+    (33) Atri -> . BOOLEAN Var = OperLog
+    (34) Atri -> . BOOLEAN Var = OperRel
+    (35) Atri -> . BOOLEAN Var = BOOL
+    (23) Funcao -> . FNAM ( ) { Elementos }
+    (36) Io -> . READ ( Var )
+    (37) Io -> . WRITE NUM
+    (38) Io -> . WRITE Var
+    (39) Io -> . WRITE ( TEXTO )
+    (16) Conditional -> . inicioElse fimElse
+    (19) Conditional -> . inicioIF fimIF
+    (13) For -> . FOR ( Atri ; OperRel
+    (51) Termo -> . Termo * Factor
+    (52) Termo -> . Termo / Factor
+    (53) Termo -> . Termo MOD Factor
+    (54) Termo -> . Factor
+    (63) Var -> . VAR
+    (55) Factor -> . ( OperAr )
+    (56) Factor -> . NUM
+    (57) Factor -> . Var
+    (17) inicioElse -> . ELSE
+    (21) inicioIF -> . IF ( OperRel )
+    (22) inicioIF -> . IF ( Var )
+
+    }               shift and go to state 134
+    RETURN          shift and go to state 10
+    BOOL            shift and go to state 17
+    VAR             shift and go to state 19
+    INT             shift and go to state 21
+    BOOLEAN         shift and go to state 22
+    FNAM            shift and go to state 23
+    READ            shift and go to state 24
+    WRITE           shift and go to state 25
+    FOR             shift and go to state 28
+    (               shift and go to state 4
+    NUM             shift and go to state 20
+    ELSE            shift and go to state 29
+    IF              shift and go to state 30
+
+    Elemento                       shift and go to state 5
+    OperAr                         shift and go to state 6
+    OperLog                        shift and go to state 7
+    OperRel                        shift and go to state 8
+    Atri                           shift and go to state 9
+    Var                            shift and go to state 11
+    Funcao                         shift and go to state 12
+    Io                             shift and go to state 13
+    Conditional                    shift and go to state 14
+    For                            shift and go to state 15
+    Termo                          shift and go to state 16
+    Factor                         shift and go to state 18
+    inicioElse                     shift and go to state 26
+    inicioIF                       shift and go to state 27
+
+state 128
+
+    (13) For -> FOR ( Atri ; OperRel .
+
+    ;               reduce using rule 13 (For -> FOR ( Atri ; OperRel .)
+
+
+state 129
+
+    (26) Atri -> VAR [ NUM ] = VAR .
+
+    RUN             reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    RETURN          reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    BOOL            reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    VAR             reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    INT             reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    BOOLEAN         reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    FNAM            reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    READ            reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    WRITE           reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    FOR             reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    (               reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    NUM             reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    ELSE            reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    IF              reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    )               reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    ;               reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+    }               reduce using rule 26 (Atri -> VAR [ NUM ] = VAR .)
+
+
+state 130
+
+    (25) Atri -> VAR [ NUM ] = NUM .
+
+    RUN             reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    RETURN          reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    BOOL            reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    VAR             reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    INT             reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    BOOLEAN         reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    FNAM            reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    READ            reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    WRITE           reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    FOR             reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    (               reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    NUM             reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    ELSE            reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    IF              reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    )               reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    ;               reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+    }               reduce using rule 25 (Atri -> VAR [ NUM ] = NUM .)
+
+
+state 131
+
+    (28) Atri -> VAR [ Var ] = VAR .
+
+    RUN             reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    RETURN          reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    BOOL            reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    VAR             reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    INT             reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    BOOLEAN         reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    FNAM            reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    READ            reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    WRITE           reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    FOR             reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    (               reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    NUM             reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    ELSE            reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    IF              reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    )               reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    ;               reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+    }               reduce using rule 28 (Atri -> VAR [ Var ] = VAR .)
+
+
+state 132
+
+    (27) Atri -> VAR [ Var ] = NUM .
+
+    RUN             reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    RETURN          reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    BOOL            reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    VAR             reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    INT             reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    BOOLEAN         reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    FNAM            reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    READ            reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    WRITE           reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    FOR             reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    (               reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    NUM             reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    ELSE            reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    IF              reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    )               reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    ;               reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+    }               reduce using rule 27 (Atri -> VAR [ Var ] = NUM .)
+
+
+state 133
+
+    (29) Atri -> INT Var = VAR [ Var . ]
+
+    ]               shift and go to state 135
+
+
+state 134
+
+    (23) Funcao -> FNAM ( ) { Elementos } .
+
+    RUN             reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    RETURN          reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    BOOL            reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    VAR             reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    INT             reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    BOOLEAN         reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    FNAM            reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    READ            reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    WRITE           reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    FOR             reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    (               reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    NUM             reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    ELSE            reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    IF              reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    )               reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    ;               reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+    }               reduce using rule 23 (Funcao -> FNAM ( ) { Elementos } .)
+
+
+state 135
+
+    (29) Atri -> INT Var = VAR [ Var ] .
+
+    RUN             reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    RETURN          reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    BOOL            reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    VAR             reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    INT             reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    BOOLEAN         reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    FNAM            reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    READ            reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    WRITE           reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    FOR             reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    (               reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    NUM             reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    ELSE            reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    IF              reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    )               reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    ;               reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+    }               reduce using rule 29 (Atri -> INT Var = VAR [ Var ] .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: reduce/reduce conflict in state 111 resolved using rule (Atri -> INT Var = NUM)
+WARNING: rejected rule (Factor -> NUM) in state 111

@@ -1,0 +1,150 @@
+F. Mário Martins->graminteractivas1990
+J.J. Almeida->['graminteractivas1990', 'tlc89', 'estruturasdedados90', 'Natura', 'jspell1', 'Almeida94b', 'Almeida95a', 'Almeida94c', 'jj95', 'Barbosa95', 'Barbosa95a', 'BA97a', 'Barbosa95b', 'Ramalho95', 'Almeida96a', 'Ulisses96', 'Almeida96b', 'jj96', 'Almeida96c', 'Ramalho96', 'SGML97', 'Almeida98', 'Reis98', 'ABNO97a', 'ABNO97b', 'AH97', 'museums98', 'Ramalho98', 'Gis99', 'RPA99', 'RSea99', 'xmldt99', 'RRAH99', 'Barbosa2000', 'jj2001x', 'speaker:sepln2001', 'mp2001', 'alfarrabio2001', 'freq2002', 'jspell2002', 'dag2002', 'elpub2002', 'parguess2002', 'APL2k2.Parguess', 'APL2k2.Synthesis', 'xata:xmldt', 'xata:museudapessoa', 'elpub2003', 'cp3a:terminum2003', 'sepln2003', 'sepln2004', 'linguateca', 'xata05:fs', 'xata05:tdt', 'xata06:navegante', 'xata06:xmlauto']
+P.R. Henriques->['graminteractivas1990', 'Ramalho95', 'Ramalho96', 'SGML97', 'AH97', 'museums98', 'Ramalho98', 'RRAH99']
+J.B. Barros->['tlc89', 'estruturasdedados90', 'Almeida96b', 'Barbosa2000']
+{projecto Camila}->Camila
+Ulisses Pinto->['jspell1', 'Almeida94c', 'Ulisses96']
+L.S. Barbosa->['Barbosa95', 'Barbosa95a', 'BA97a', 'Barbosa95b', 'Barbosa2000']
+J.C. Ramalho->['Ramalho95', 'Almeida96c', 'Ramalho96', 'SGML97', 'museums98', 'Ramalho98', 'RRAH99']
+J.G. Rocha->['SGML97', 'museums98', 'RRAH99']
+Ricardo Reis->Reis98
+Barbosa, L.S.->['ABNO97a', 'ABNO97b', 'ABBN98']
+Neves, F.L.->['ABNO97a', 'ABNO97b']
+Oliveira, J.N.->['ABNO97a', 'ABNO97b']
+M.R. Henriques->museums98
+J.L.  Faria->museums98
+Almeida, J.J.->ABBN98
+Barros, J.B.->ABBN98
+Neves, L.F.->ABBN98
+Jorge Rocha->['Gis99', 'RPA99']
+Ana Silva->['Gis99', 'RSea99']
+Ricardo Henriques->Gis99
+Pedro Henriques->['Gis99', 'KMHVZ04', 'HVMLGW05', 'HKMVZ03', 'FCHV08', 'CHP09a', 'CH09d']
+Tiago Pedroso->RPA99
+Jorge Gustavo Rocha->['RSea99', 'RARH98']
+Mario Ricardo Henriques->RSea99
+Pedro Rangel Henriques->['RSea99', 'RRH02', 'ORH06', 'RMHV06', 'RMHCV06', 'BH98', 'RAH98', 'RARH98', 'GRH06', 'JGRH04', 'JGRH03', 'GRH04', 'GRH05a', 'RH98a', 'MSH05', 'ALHF02', 'VH01', 'RMHVC06', 'BHVU07d', 'BHVU07c', 'BHVU07b', 'BHVU07a', 'CHLB07a', 'BHVU06a', 'BHVU06b', 'BHVUM06', 'BHVU08', 'BHV06', 'BCVHU08', 'BUHV08', 'OVH05', 'OHV06', 'GH07b', 'GH07a', 'GFH08', 'FGH08', 'FH08', 'LPRH07', 'LPRH07-TM', 'LRHGT08', 'LGFSSAH08', 'LMMVRH08', 'CHV08ja', 'FPCH08jb', 'PMCH08j', 'CHV07', 'CPH07f', 'CH07g', 'CH07h', 'CHP08i', 'CH07a', 'CLH07c', 'CH07d', 'CFPBH07d', 'CHP08a', 'CHP08b', 'CPH08c', 'FPCH08d', 'PMCH08e', 'PMCH08f', 'OPCH09a', 'FCHGD09a', 'ORH09a', 'LPH09a', 'LARH09', 'OPHC09a', 'OPHCC09', 'MKCHCPO09', 'OHCP09', 'FCHGD09b', 'BHVU09', 'CBHP09', 'cruz09', 'OPHCC2010', 'KOMPCCH2010']
+José Carlos Ramalho->['xmldt99', 'RH02', 'RAH98', 'RARH98', 'GRH06', 'JGRH04', 'JGRH03', 'GRH04', 'GRH05a', 'RH98a', 'LPRH07', 'LPRH07-TM', 'LRHGT08', 'LMMVRH08', 'LARH09']
+A. M. Simões->speaker:sepln2001
+J. Gustavo Rocha->['mp2001', 'alfarrabio2001']
+P. Rangel Henriques->['mp2001', 'alfarrabio2001']
+Sónia Moreira->mp2001
+Alberto Simões->['mp2001', 'alfarrabio2001', 'cp3a:terminum2003', 'cp3a:natools2003', 'xata04:tx', 'xata04:mtd', 'xmldt2', 'sepln2004', 'linguateca', 'xata05:fs', 'xata05:tdt', 'xata06:navegante', 'xata06:xmlauto', 'sepln06', 'eamt06', 'lrec06', 'elpub06-t2o', 'elpub06-blind', 'avalon:jspell', 'avalon:avalinha', 'xata07:xmltmx', 'MP07', 'epia-music-2007']
+Paulo A. Rocha->freq2002
+Alberto M. Simões->['freq2002', 'jspell2002', 'dag2002', 'elpub2002', 'parguess2002', 'sepln2003']
+Pedro R. Henriques->dag2002
+J. Alves de Castro->parguess2002
+Alberto Manuel Simões->['APL2k2.Parguess', 'APL2k2.Synthesis', 'xata:xmldt', 'xata:museudapessoa', 'elpub2003']
+José Alves Castro->APL2k2.Parguess
+José Castro->cp3a:terminum2003
+Bruno Martins->['cp3a:terminum2003', 'cp3a:kvec2003']
+Paulo Silva->cp3a:terminum2003
+José João Dias de Almeida->tesejj
+Alberto Manuel Brandão Simões->teseambs
+José João Almeida->['xata04:tx', 'xata04:mtd', 'lrec06', 'avalon:jspell', 'avalon:avalinha', 'xata07:xmltmx', 'MP07', 'epia-music-2007', 'RAH98', 'RARH98']
+Xavier Gomez Guinovart->xata04:mtd
+Xavier Gómez Guinovart->sepln2004
+Diana Santos->linguateca
+Ana Frankenberg-Garcia->linguateca
+Ana Pinto->linguateca
+Anabela Barreiro->linguateca
+Belinda Maia->linguateca
+Cristina Mota->linguateca
+Débora Oliveira->linguateca
+Eckhard Bick->['linguateca', 'xata05:fs']
+Elisabete Ranchhod->linguateca
+Luís Cabral->linguateca
+Luís Costa->linguateca
+Luís Sarmento->linguateca
+Marcirio Chaves->linguateca
+Nuno Cardoso->linguateca
+Paulo Rocha->linguateca
+Rachel Aires->linguateca
+Rosário Silva->linguateca
+Rui Vilela->['linguateca', 'xata05:fs']
+Susana Afonso->linguateca
+J. João Almeida->['sepln06', 'eamt06', 'elpub06-t2o', 'elpub06-blind']
+António R. Fernandes->elpub06-blind
+Alexandre Carvalho->elpub06-blind
+Rúben Fonseca->['MP07', 'CFPBH07d']
+Anália  Lourenço->epia-bio-2007
+Alberto  Simões->epia-bio-2007
+José Almeida->epia-bio-2007
+Miguel  Rocha->epia-bio-2007
+Isabel  Rocha->epia-bio-2007
+Eugénio  Ferreira->epia-bio-2007
+Anália Lourenço->epia-music-2007
+J.João Almeida->harem:rena
+Pedro Rangel  Henriques->RH02
+F\'atima Rodrigues->['RRH02', 'ORH06']
+Carlos Ramos->RRH02
+Paulo Oliveira->ORH06
+Tomaz Kosar->['KMHVZ04', 'HKMVZ03', 'MKCHCPO09', 'KOMPCCH2010']
+Marjan Mernik->['KMHVZ04', 'HVMLGW05', 'RMHV06', 'RMHCV06', 'HKMVZ03', 'RMHVC06', 'PMCH08j', 'PMCH08e', 'PMCH08f', 'MKCHCPO09', 'KOMPCCH2010']
+Maria João Varanda->['KMHVZ04', 'HVMLGW05', 'RMHV06', 'RMHCV06', 'HKMVZ03', 'BHVU06a', 'BHVU06b', 'BHVUM06', 'BHVU08', 'BHV06', 'BCVHU08', 'OVH05', 'OHV06', 'CHV08ja', 'CHV07']
+Viljem Zumer->['KMHVZ04', 'HKMVZ03']
+Mitja Lenic->HVMLGW05
+Jeff Gray->HVMLGW05
+Hui Wu->HVMLGW05
+Damijan Rebernak->['RMHV06', 'RMHCV06', 'RMHVC06']
+Daniela da Cruz->['RMHCV06', 'BCVHU08', 'CHV08ja', 'FPCH08jb', 'PMCH08j', 'CHV07', 'CPH07f', 'CH07g', 'CH07h', 'FCHV08', 'CHP08i', 'CH07a', 'CLH07c', 'CH07d', 'CFPBH07d', 'CHP08a', 'CHP08b', 'CPH08c', 'FPCH08d', 'PMCH08e', 'PMCH08f', 'CHP09a', 'OPCH09a', 'FCHGD09a', 'OPHC09a', 'OPHCC09', 'MKCHCPO09', 'OHCP09', 'FCHGD09b', 'CBHP09', 'cruz09', 'CH09d', 'OPHCC2010', 'KOMPCCH2010']
+Gancarski, Alda->GDH06
+Doucet, Anne->GDH06
+Henriques, Pedro->GDH06
+Leonor Barroca->BH98
+Giovani Librelotto->['GRH06', 'JGRH04', 'JGRH03', 'GRH04', 'GRH05a', 'ALHF02']
+Marta Jacinto->['JGRH04', 'JGRH03']
+Giovana Mendes->MSH05
+Nuno Alberto Silva->MSH05
+Gustavo Arnold->ALHF02
+Jaime Fonseca->ALHF02
+M. J. Varanda->['VH01', 'VH02', 'VH03']
+P. Henriques->['VH02', 'VH03']
+M. Mernik->VH02
+M. Lenic->VH02
+Maria João Varanda Pereira->['RMHVC06', 'BUHV08', 'PMCH08j', 'CPH07f', 'FCHV08', 'CHP08i', 'CFPBH07d', 'CHP08a', 'CHP08b', 'PMCH08e', 'PMCH08f', 'OPCH09a', 'OPHC09a', 'OPHCC09', 'MKCHCPO09', 'OHCP09', 'BHVU09', 'CBHP09', 'OPHCC2010', 'KOMPCCH2010']
+Daniela Cruz->RMHVC06
+Mario Ber\'on->['BHVU07d', 'BHVU07c', 'BHVU07b', 'BHVU07a']
+M. Jo\~ao Varanda->['BHVU07d', 'BHVU07c', 'BHVU07b', 'BHVU07a']
+Roberto Uzal->['BHVU07d', 'BHVU07c', 'BHVU07b', 'BHVU07a', 'BHVU06a', 'BHVU06b', 'BHVUM06', 'BHVU08', 'BCVHU08', 'BUHV08', 'BHVU09']
+Elisabete Cunha->CHLB07a
+Sandra Lopes->CHLB07a
+Mario Béron->['CHLB07a', 'BHVU06a', 'BHVU06b', 'BHVUM06', 'BHVU08', 'BHV06', 'BCVHU08', 'BHVU09', 'CBHP09']
+G. Montejano->BHVUM06
+Mario Berón->BUHV08
+Eva Oliveira->['OVH05', 'OHV06']
+Alda Gancarski->['GH07b', 'GH07a', 'GFH08']
+Flávio Xavier Ferreira->['GFH08', 'FGH08', 'FH08', 'FCHGD09a', 'FCHGD09b']
+Alda Lopes Gancarski->['FGH08', 'FCHGD09a', 'FCHGD09b']
+Giovani Rubert Librelotto->['LPRH07', 'LPRH07-TM', 'LRHGT08', 'LGFSSAH08', 'LMMVRH08', 'LPH09a', 'LARH09']
+Renato Preigschadt de Azevedo->['LPRH07', 'LPRH07-TM', 'LARH09']
+Jonas Bulegon Gassen->['LRHGT08', 'LGFSSAH08']
+Rogério Corrêa Turchetti->LRHGT08
+Leandro O. Freitas->LGFSSAH08
+Matheus C. Silveira->LGFSSAH08
+Fábio L. Silva->LGFSSAH08
+Iara Augustin->LGFSSAH08
+Mirkos Martins->LMMVRH08
+Henrique Machado->LMMVRH08
+Juliana Vizzotto->LMMVRH08
+Elisabete Ferreira->['FPCH08jb', 'FPCH08d']
+Rogério Paulo->['FPCH08jb', 'FPCH08d']
+Ruben Fonseca->FCHV08
+Sandra Cristina Lopes->CLH07c
+Mário Béron->CFPBH07d
+Jorge Sousa Pinto->['CPH08c', 'CHP09a']
+Nuno Oliveira->['OPCH09a', 'OPHC09a', 'OPHCC09', 'MKCHCPO09', 'OHCP09', 'cruz09', 'OPHCC2010', 'KOMPCCH2010']
+Oliveira, Nuno->['oliveira09b', 'oliveira09c', 'kosar09']
+Henriques, Pedro Rangel->['oliveira09b', 'kosar09']
+da Cruz, Daniela->['oliveira09b', 'oliveira09c', 'kosar09']
+Pereira, Maria João Varanda->['oliveira09b', 'oliveira09c', 'kosar09']
+Mernik, Marjan->['oliveira09b', 'kosar09']
+Kosar, Tomaz->['oliveira09b', 'kosar09']
+Crepinsek, Matej->oliveira09b
+and Henriques, Pedro Rangel->oliveira09c
+Bruno Defude->['FCHGD09a', 'FCHGD09b']
+Paulo Jorge Oliveria->ORH09a
+Maria de Fátima Rodrigues->ORH09a
+Rafael Teodósio Pereira->LPH09a
+Bastian Cramer->['OPHCC09', 'OPHCC2010']
+Matej Crepinsek->KOMPCCH2010

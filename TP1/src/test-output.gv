@@ -1,0 +1,19 @@
+digraph {
+	"Nuno Oliveira" [label="Nuno Oliveira"]
+	"Daniela da Cruz" [label="Daniela da Cruz"]
+	"Nuno Oliveira" -> "Daniela da Cruz"
+	"Danielada Cruz" [label="Danielada Cruz"]
+	"Nuno Oliveira" -> "Danielada Cruz"
+	"Marjan Mernik" [label="Marjan Mernik"]
+	"Nuno Oliveira" -> "Marjan Mernik"
+	"Tomaz Kosar" [label="Tomaz Kosar"]
+	"Nuno Oliveira" -> "Tomaz Kosar"
+	"Matej Crepinsek" [label="Matej Crepinsek"]
+	"Nuno Oliveira" -> "Matej Crepinsek"
+	"Pedro Rangel Henriques" [label="Pedro Rangel Henriques"]
+	"Nuno Oliveira" -> "Pedro Rangel Henriques"
+	"Maria João Varanda Pereira" [label="Maria João Varanda Pereira"]
+	"Nuno Oliveira" -> "Maria João Varanda Pereira"
+	"Bastian Cramer" [label="Bastian Cramer"]
+	"Nuno Oliveira" -> "Bastian Cramer"
+}
