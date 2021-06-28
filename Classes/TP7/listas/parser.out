@@ -1,0 +1,126 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> Lista
+Rule 1     Lista -> PA Elementos PF
+Rule 2     Lista -> PA PF
+Rule 3     Elementos -> Elementos VIRG Elemento
+Rule 4     Elementos -> Elemento
+Rule 5     Elemento -> number
+Rule 6     Elemento -> alfanum
+
+Terminals, with rules where they appear
+
+PA                   : 1 2
+PF                   : 1 2
+VIRG                 : 3
+alfanum              : 6
+error                : 
+number               : 5
+
+Nonterminals, with rules where they appear
+
+Elemento             : 3 4
+Elementos            : 1 3
+Lista                : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . Lista
+    (1) Lista -> . PA Elementos PF
+    (2) Lista -> . PA PF
+
+    PA              shift and go to state 2
+
+    Lista                          shift and go to state 1
+
+state 1
+
+    (0) S' -> Lista .
+
+
+
+state 2
+
+    (1) Lista -> PA . Elementos PF
+    (2) Lista -> PA . PF
+    (3) Elementos -> . Elementos VIRG Elemento
+    (4) Elementos -> . Elemento
+    (5) Elemento -> . number
+    (6) Elemento -> . alfanum
+
+    PF              shift and go to state 4
+    number          shift and go to state 6
+    alfanum         shift and go to state 7
+
+    Elementos                      shift and go to state 3
+    Elemento                       shift and go to state 5
+
+state 3
+
+    (1) Lista -> PA Elementos . PF
+    (3) Elementos -> Elementos . VIRG Elemento
+
+    PF              shift and go to state 8
+    VIRG            shift and go to state 9
+
+
+state 4
+
+    (2) Lista -> PA PF .
+
+    $end            reduce using rule 2 (Lista -> PA PF .)
+
+
+state 5
+
+    (4) Elementos -> Elemento .
+
+    PF              reduce using rule 4 (Elementos -> Elemento .)
+    VIRG            reduce using rule 4 (Elementos -> Elemento .)
+
+
+state 6
+
+    (5) Elemento -> number .
+
+    PF              reduce using rule 5 (Elemento -> number .)
+    VIRG            reduce using rule 5 (Elemento -> number .)
+
+
+state 7
+
+    (6) Elemento -> alfanum .
+
+    PF              reduce using rule 6 (Elemento -> alfanum .)
+    VIRG            reduce using rule 6 (Elemento -> alfanum .)
+
+
+state 8
+
+    (1) Lista -> PA Elementos PF .
+
+    $end            reduce using rule 1 (Lista -> PA Elementos PF .)
+
+
+state 9
+
+    (3) Elementos -> Elementos VIRG . Elemento
+    (5) Elemento -> . number
+    (6) Elemento -> . alfanum
+
+    number          shift and go to state 6
+    alfanum         shift and go to state 7
+
+    Elemento                       shift and go to state 10
+
+state 10
+
+    (3) Elementos -> Elementos VIRG Elemento .
+
+    PF              reduce using rule 3 (Elementos -> Elementos VIRG Elemento .)
+    VIRG            reduce using rule 3 (Elementos -> Elementos VIRG Elemento .)
+

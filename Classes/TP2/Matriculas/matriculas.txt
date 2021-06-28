@@ -1,0 +1,9 @@
+Exemplos: 99-12-09-37, 10...11...12...13, 87:07:45:11
+
+Alguns exemplos invalidos:
+111-23-45...89
+00:00-00-00
+terminamos bem 00-00-00-00
+That's all folks!
+11-99-34-56789
+qwrwqegw00:00:00:00asdagqrq

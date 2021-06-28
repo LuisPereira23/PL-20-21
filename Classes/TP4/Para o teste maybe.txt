@@ -1,0 +1,4 @@
+Para o teste maybe
+
+Strings Binarias que nao contem a substring: 011
+1*(0|01)*
